@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Central de Marca | Fabricio Kaempf</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Gloock&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Cormorant+Garamond:ital@1&display=swap');
+
+:root{
+  --onyx:#0E0F12; --grafite:#15171C; --grafite-2:#1B1E25;
+  --ouro:#C9A24B; --ouro-claro:#E6C877; --brasa:#C2643C;
+  --creme:#F2E9D6; --areia:#9A9082;
+  --linha:rgba(201,162,75,0.22); --linha-suave:rgba(242,233,214,0.10);
+  --sans:'Inter',-apple-system,'Segoe UI',sans-serif;
+  --serif:'Gloock',Georgia,serif;
+  --mono:'JetBrains Mono',Consolas,monospace;
+  --quote:'Cormorant Garamond',Georgia,serif;
+}
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+body{
+  background:
+    radial-gradient(1000px 600px at 82% -8%, rgba(201,162,75,0.10), transparent 60%),
+    radial-gradient(800px 520px at 4% 16%, rgba(194,100,60,0.06), transparent 55%),
+    var(--onyx);
+  color:var(--creme); font-family:var(--sans); line-height:1.65;
+  -webkit-font-smoothing:antialiased; min-height:100vh;
+}
+.wrap{ max-width:960px; margin:0 auto; padding:0 26px; }
+
+header{ padding:96px 0 60px; border-bottom:1px solid var(--linha); position:relative; overflow:hidden; }
+header .arc{ position:absolute; right:-220px; top:-140px; width:560px; height:560px; border-radius:50%; border:1.5px solid var(--linha); box-shadow:inset 0 0 100px rgba(201,162,75,0.10); pointer-events:none; }
+.star{ color:var(--ouro); font-size:16px; letter-spacing:6px; display:block; margin-bottom:22px; }
+.pre{ font-family:var(--mono); font-size:12px; letter-spacing:4px; text-transform:uppercase; color:var(--areia); margin-bottom:20px; }
+h1{ font-family:var(--serif); font-weight:400; font-size:clamp(38px,7vw,76px); line-height:1; letter-spacing:-1px; margin-bottom:18px; }
+h1 .gold{ background:linear-gradient(96deg,var(--ouro-claro),var(--ouro) 55%,var(--brasa)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+.sub{ font-family:var(--quote); font-style:italic; font-size:clamp(18px,2.6vw,25px); color:var(--ouro-claro); margin-bottom:20px; }
+.tagline{ max-width:560px; color:var(--areia); font-size:16px; }
+.tagline b{ color:var(--creme); font-weight:500; }
+
+section{ padding:70px 0; border-bottom:1px solid var(--linha-suave); }
+section:last-of-type{ border-bottom:none; }
+.kicker{ font-family:var(--mono); font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--ouro); display:flex; align-items:center; gap:12px; margin-bottom:28px; }
+.kicker::before{ content:""; width:30px; height:1px; background:var(--ouro); }
+
+/* CALENDARIO */
+.cal{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:18px; }
+.day{ background:linear-gradient(180deg,var(--grafite-2),var(--grafite)); border:1px solid var(--linha-suave); border-radius:14px; padding:24px; position:relative; overflow:hidden; }
+.day::before{ content:""; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--ouro),transparent); }
+.day .d-tag{ font-family:var(--mono); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--ouro); margin-bottom:10px; }
+.day h3{ font-family:var(--serif); font-weight:400; font-size:20px; margin-bottom:8px; }
+.day p{ font-size:13.5px; color:var(--areia); line-height:1.6; }
+.day p b{ color:var(--creme); font-weight:500; }
+.cal-note{ font-size:13.5px; color:var(--areia); max-width:640px; }
+.cal-note b{ color:var(--creme); font-weight:500; }
+
+/* DOCS */
+.docs{ display:flex; flex-direction:column; gap:14px; }
+.doc{
+  display:grid; grid-template-columns:52px 1fr auto; gap:20px; align-items:center;
+  background:var(--grafite); border:1px solid var(--linha-suave); border-radius:14px;
+  padding:22px 26px; text-decoration:none; color:inherit;
+  transition:border-color .25s ease, transform .25s ease;
+}
+.doc:hover{ border-color:var(--linha); transform:translateY(-2px); }
+.doc .d-ix{ font-family:var(--serif); font-size:24px; color:var(--ouro); }
+.doc h3{ font-family:var(--serif); font-weight:400; font-size:20px; margin-bottom:3px; color:var(--creme); }
+.doc p{ font-size:13.5px; color:var(--areia); }
+.doc .go{ font-family:var(--mono); font-size:12px; letter-spacing:1.5px; color:var(--ouro); white-space:nowrap; }
+.doc:focus-visible{ outline:2px solid var(--ouro); outline-offset:3px; }
+
+footer{ text-align:center; padding:56px 26px 76px; color:var(--areia); }
+footer .fname{ font-family:var(--serif); font-size:22px; color:var(--creme); margin:14px 0 4px; }
+footer .ftag{ font-family:var(--mono); font-size:11px; letter-spacing:3px; text-transform:uppercase; }
+footer .fmeta{ font-size:13px; margin-top:16px; }
+
+@media (max-width:760px){
+  .cal{ grid-template-columns:1fr; }
+  .doc{ grid-template-columns:1fr; gap:8px; }
+  .doc .go{ display:none; }
+  header{ padding:70px 0 48px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="arc"></div>
+  <div class="wrap">
+    <span class="star">&#9733; &#9733; &#9733;</span>
+    <div class="pre">Central de Marca &middot; 2026</div>
+    <h1>Fabricio<br><span class="gold">Kaempf</span></h1>
+    <div class="sub">Toda a documentação da marca, num lugar só.</div>
+    <p class="tagline">Identidade, pessoa, canais e calendário. <b>Cada documento abre no link abaixo</b>, sempre na versão mais atual.</p>
+  </div>
+</header>
+
+<section id="calendario">
+  <div class="wrap">
+    <div class="kicker">O Calendário Semanal</div>
+    <div class="cal">
+      <div class="day">
+        <div class="d-tag">LinkedIn &middot; Terça &middot; 07h30</div>
+        <h3>1 post por semana</h3>
+        <p><b>Modo vitrine.</b> Rodízio dos pilares (cena, técnico, pessoal, opinião), rascunho pronto na segunda à noite, plantão leve de 45 min após publicar.</p>
+      </div>
+      <div class="day">
+        <div class="d-tag">Threads &middot; Ao longo da semana</div>
+        <h3>2 a 3 posts curtos</h3>
+        <p><b>Modo mesa.</b> Bastidor, take, pergunta ou generosidade. E o principal: 10 a 15 min respondendo a lista dos 15 com substância.</p>
+      </div>
+      <div class="day">
+        <div class="d-tag">Sempre &middot; Regras da casa</div>
+        <h3>A voz é uma só</h3>
+        <p>Cena antes de tese, acentuação completa, <b>zero travessão</b>, fé só no detalhe, nunca vender no Threads, nunca soar IA.</p>
+      </div>
+    </div>
+    <p class="cal-note"><b>Papel de cada canal:</b> LinkedIn confirma autoridade quando te procuram; Threads constrói relação com colegas, prospects e clientes. Os dois bebem da mesma marca, documentada abaixo.</p>
+  </div>
+</section>
+
+<section id="docs">
+  <div class="wrap">
+    <div class="kicker">As Documentações</div>
+    <div class="docs">
+      <a class="doc" href="brandbook_fabricio_kaempf.html">
+        <span class="d-ix">01</span>
+        <span><h3>Brandbook</h3><p>Identidade visual completa: paleta onyx + ouro, tipografia, elementos, aplicações e a régua do não fazer.</p></span>
+        <span class="go">ABRIR &rarr;</span>
+      </a>
+      <a class="doc" href="manual_marca_pessoal_fabricio.html">
+        <span class="d-ix">02</span>
+        <span><h3>Manual de Marca Pessoal</h3><p>A pessoa por trás da marca: história, jornada, os três arquétipos (Sábio, Cara Comum, Cuidador), valores, fé e voz.</p></span>
+        <span class="go">ABRIR &rarr;</span>
+      </a>
+      <a class="doc" href="linha_editorial_linkedin.html">
+        <span class="d-ix">03</span>
+        <span><h3>Linha Editorial &middot; LinkedIn</h3><p>O manual do modo vitrine: papel do canal, pilares, cadência, hooks, ritual, resultados e o apêndice de crescimento.</p></span>
+        <span class="go">ABRIR &rarr;</span>
+      </a>
+      <a class="doc" href="linha_editorial_threads_fabricio.html">
+        <span class="d-ix">04</span>
+        <span><h3>Linha Editorial &middot; Threads</h3><p>Menos palco, mais mesa: o canal de relacionamento reply-first, os quatro pilares leves e a lista dos 15.</p></span>
+        <span class="go">ABRIR &rarr;</span>
+      </a>
+      <a class="doc" href="linkedin_descricoes_cargo.html">
+        <span class="d-ix">05</span>
+        <span><h3>Descrições de Cargo &middot; LinkedIn</h3><p>Os textos oficiais das experiências do perfil: Crie@tive Digital, Ômega Educação, Alto Estratégia e Pixel 3.</p></span>
+        <span class="go">ABRIR &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="star">&#9733; &#9733; &#9733;</span>
+  <div class="fname">Fabricio Kaempf</div>
+  <div class="ftag">GROWTH &amp; PERFORMANCE</div>
+  <div class="fmeta">Central de Marca &middot; 2026 &middot; @fabriciokaempf</div>
+</footer>
+
+</body>
+</html>

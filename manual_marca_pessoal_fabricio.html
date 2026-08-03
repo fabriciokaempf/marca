@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Manual de Marca Pessoal | Fabricio Kaempf</title>
+<style>
+/* ============================================================
+   MANUAL DE MARCA PESSOAL, FABRICIO KAEMPF
+   A pessoa por tras da marca. Mesma identidade: onyx, ouro, creme.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Gloock&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&display=swap');
+
+:root{
+  --onyx:       #0E0F12;
+  --grafite:    #15171C;
+  --grafite-2:  #1B1E25;
+  --ouro:       #C9A24B;
+  --ouro-claro: #E6C877;
+  --brasa:      #C2643C;
+  --creme:      #F2E9D6;
+  --areia:      #9A9082;
+  --azul:       #1E2A44;
+  --linha:      rgba(201,162,75,0.22);
+  --linha-suave:rgba(242,233,214,0.10);
+  --sans: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+  --serif:'Gloock', Georgia, serif;
+  --mono: 'JetBrains Mono', Consolas, monospace;
+  --quote:'Cormorant Garamond', Georgia, serif;
+  --maxw: 1060px;
+}
+
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{
+  background:
+    radial-gradient(1150px 680px at 80% -6%, rgba(201,162,75,0.10), transparent 60%),
+    radial-gradient(880px 560px at 6% 12%, rgba(194,100,60,0.06), transparent 55%),
+    var(--onyx);
+  color:var(--creme);
+  font-family:var(--sans);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{ max-width:var(--maxw); margin:0 auto; padding:0 28px; }
+section{ padding:96px 0; border-bottom:1px solid var(--linha-suave); }
+section:last-of-type{ border-bottom:none; }
+
+.kicker{
+  font-family:var(--mono); font-size:12px; letter-spacing:3.5px;
+  text-transform:uppercase; color:var(--ouro);
+  display:flex; align-items:center; gap:14px; margin-bottom:20px;
+}
+.kicker::before{ content:""; width:34px; height:1px; background:var(--ouro); }
+h2.sec-title{
+  font-family:var(--serif); font-weight:400;
+  font-size:clamp(28px,4.2vw,50px); line-height:1.07;
+  color:var(--creme); letter-spacing:-0.5px; margin-bottom:16px;
+}
+.sec-intro{ max-width:680px; color:var(--areia); font-size:16.5px; line-height:1.75; margin-bottom:48px; }
+.sec-intro strong{ color:var(--creme); font-weight:500; }
+.lead-quote{
+  font-family:var(--quote); font-style:italic; font-size:clamp(22px,3vw,30px);
+  line-height:1.45; color:var(--ouro-claro); max-width:760px; margin:0 0 8px;
+}
+
+/* ============ CAPA ============ */
+.cover{
+  min-height:96vh; display:flex; flex-direction:column; justify-content:center;
+  position:relative; overflow:hidden; border-bottom:1px solid var(--linha); padding:90px 0 70px;
+}
+.cover .arc{
+  position:absolute; right:-240px; top:50%; transform:translateY(-50%);
+  width:720px; height:720px; border-radius:50%; border:1.5px solid var(--linha);
+  box-shadow:inset 0 0 120px rgba(201,162,75,0.10); pointer-events:none;
+}
+.cover .arc::after{ content:""; position:absolute; inset:88px; border-radius:50%; border:1px solid rgba(201,162,75,0.12); }
+.cover .glow{ position:absolute; right:-60px; top:50%; transform:translateY(-50%); width:520px; height:520px; background:radial-gradient(circle, rgba(230,200,119,0.14), transparent 62%); pointer-events:none; }
+.cover-inner{ position:relative; z-index:2; }
+.cover .star{ color:var(--ouro); font-size:18px; letter-spacing:6px; display:block; margin-bottom:26px; }
+.cover .pre{ font-family:var(--mono); font-size:13px; letter-spacing:5px; text-transform:uppercase; color:var(--areia); margin-bottom:26px; }
+.cover h1{ font-family:var(--serif); font-weight:400; font-size:clamp(42px,8vw,104px); line-height:0.96; letter-spacing:-1.5px; color:var(--creme); margin-bottom:20px; }
+.cover h1 .gold{ background:linear-gradient(96deg,var(--ouro-claro),var(--ouro) 55%,var(--brasa)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+.cover .sub{ font-family:var(--quote); font-style:italic; font-size:clamp(20px,3vw,30px); color:var(--ouro-claro); margin-bottom:26px; }
+.cover .tagline{ max-width:580px; font-size:17px; color:var(--areia); }
+.cover .tagline b{ color:var(--creme); font-weight:500; }
+.cover .signature{ font-family:var(--mono); font-size:12px; letter-spacing:5px; text-transform:uppercase; color:var(--areia); border-top:1px solid var(--linha); padding-top:18px; margin-top:52px; }
+.cover .signature b{ color:var(--ouro); font-weight:500; }
+
+/* ============ PESSOA (grid de fatos) ============ */
+.facts{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:8px; }
+.fact{ background:linear-gradient(180deg,var(--grafite-2),var(--grafite)); border:1px solid var(--linha-suave); border-radius:14px; padding:26px; position:relative; overflow:hidden; }
+.fact::before{ content:""; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--ouro),transparent); }
+.fact .f-lbl{ font-family:var(--mono); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--ouro); margin-bottom:12px; }
+.fact h4{ font-family:var(--serif); font-weight:400; font-size:20px; color:var(--creme); margin-bottom:8px; }
+.fact p{ font-size:14px; color:var(--areia); line-height:1.6; }
+.prose{ max-width:720px; }
+.prose p{ color:var(--areia); font-size:16px; margin-bottom:16px; }
+.prose p strong{ color:var(--creme); font-weight:500; }
+
+/* ============ JORNADA (timeline) ============ */
+.timeline{ display:flex; flex-direction:column; gap:0; margin-top:8px; border-left:1px solid var(--linha); padding-left:34px; }
+.tl{ position:relative; padding:18px 0 26px; }
+.tl::before{ content:""; position:absolute; left:-40px; top:24px; width:11px; height:11px; border-radius:50%; background:var(--ouro); box-shadow:0 0 0 4px var(--onyx), 0 0 0 5px var(--linha); }
+.tl .t-when{ font-family:var(--mono); font-size:12px; letter-spacing:1.5px; color:var(--ouro); margin-bottom:6px; }
+.tl h4{ font-family:var(--serif); font-weight:400; font-size:21px; color:var(--creme); margin-bottom:6px; }
+.tl p{ font-size:15px; color:var(--areia); line-height:1.6; }
+.stats-row{ display:flex; flex-wrap:wrap; gap:26px 48px; margin-top:44px; padding-top:34px; border-top:1px solid var(--linha-suave); }
+.stat .num{ font-family:var(--serif); font-size:36px; color:var(--ouro); line-height:1; }
+.stat .lbl{ font-family:var(--mono); font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--areia); margin-top:8px; }
+
+/* ============ ARQUETIPOS ============ */
+.arch-intro{ display:grid; grid-template-columns:1fr; gap:18px; margin-bottom:44px; }
+.tri{ display:flex; gap:14px; flex-wrap:wrap; }
+.tri span{ font-family:var(--mono); font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--ouro); border:1px solid var(--linha); border-radius:40px; padding:8px 18px; }
+.archetypes{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.arch{ background:linear-gradient(180deg,var(--grafite-2),var(--grafite)); border:1px solid var(--linha-suave); border-radius:16px; padding:32px 28px; display:flex; flex-direction:column; }
+.arch .a-body-part{ font-family:var(--mono); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--brasa); margin-bottom:14px; }
+.arch .a-name{ font-family:var(--serif); font-weight:400; font-size:27px; color:var(--creme); line-height:1.05; margin-bottom:4px; }
+.arch .a-en{ font-family:var(--mono); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--areia); margin-bottom:18px; }
+.arch .a-share{ height:6px; border-radius:6px; background:rgba(242,233,214,0.08); margin-bottom:6px; overflow:hidden; }
+.arch .a-share .fill{ height:100%; border-radius:6px; background:linear-gradient(90deg,var(--brasa),var(--ouro) 70%,var(--ouro-claro)); }
+.arch .a-pct{ font-family:var(--mono); font-size:11px; letter-spacing:1px; color:var(--areia); margin-bottom:18px; }
+.arch p{ font-size:14px; color:var(--areia); line-height:1.6; margin-bottom:14px; }
+.arch p b{ color:var(--creme); font-weight:500; }
+.arch .a-shows{ margin-top:auto; border-top:1px solid var(--linha-suave); padding-top:14px; }
+.arch .a-shows .l{ font-family:var(--mono); font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--ouro); display:block; margin-bottom:6px; }
+.arch .a-shows span{ font-size:13px; color:var(--areia); font-style:italic; font-family:var(--quote); }
+.shadow{ margin-top:22px; background:var(--grafite); border:1px solid var(--linha-suave); border-left:3px solid var(--brasa); border-radius:12px; padding:24px 28px; }
+.shadow h5{ font-family:var(--mono); font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--brasa); margin-bottom:10px; }
+.shadow p{ font-size:14.5px; color:var(--areia); line-height:1.6; }
+.shadow p b{ color:var(--creme); font-weight:500; }
+
+/* ============ VALORES ============ */
+.values{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.value{ background:var(--grafite); border:1px solid var(--linha-suave); border-radius:14px; padding:24px 28px; display:flex; gap:18px; align-items:flex-start; }
+.value .v-ix{ font-family:var(--serif); font-size:26px; color:var(--ouro); line-height:1; flex-shrink:0; }
+.value h4{ font-family:var(--sans); font-weight:600; font-size:16px; color:var(--creme); margin-bottom:5px; }
+.value p{ font-size:14px; color:var(--areia); line-height:1.55; }
+
+/* ============ FE ============ */
+.faith{ background:linear-gradient(180deg,rgba(201,162,75,0.06),var(--grafite)); border:1px solid var(--linha); border-radius:16px; padding:40px 44px; max-width:820px; }
+.faith .fq{ font-family:var(--quote); font-style:italic; font-size:23px; line-height:1.5; color:var(--creme); margin-bottom:18px; }
+.faith .fq .hl{ color:var(--ouro-claro); font-style:normal; }
+.faith p{ color:var(--areia); font-size:15.5px; margin-bottom:14px; }
+.faith p b{ color:var(--creme); font-weight:500; }
+.faith .rule-line{ font-family:var(--mono); font-size:13px; letter-spacing:0.5px; color:var(--ouro); border-top:1px solid var(--linha); padding-top:18px; margin-top:8px; }
+
+/* ============ VOZ / DO-DONT ============ */
+.dims{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:44px; }
+.dim{ background:var(--grafite); border:1px solid var(--linha-suave); border-radius:14px; padding:22px 26px; }
+.dim .d-top{ font-family:var(--mono); font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--ouro); margin-bottom:8px; }
+.dim p{ font-size:14px; color:var(--areia); line-height:1.55; }
+.dim p b{ color:var(--creme); font-weight:500; }
+.dodont{ display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+.dd{ border-radius:14px; padding:28px 30px; border:1px solid var(--linha-suave); }
+.dd.do{ background:linear-gradient(180deg,rgba(201,162,75,0.10),var(--grafite)); border-color:var(--linha); }
+.dd.dont{ background:var(--grafite); }
+.dd h5{ font-family:var(--mono); font-size:13px; letter-spacing:2px; text-transform:uppercase; margin-bottom:18px; }
+.dd.do h5{ color:var(--ouro); }
+.dd.dont h5{ color:var(--brasa); }
+.dd ul{ list-style:none; }
+.dd li{ font-size:14.5px; line-height:1.5; padding:10px 0; border-bottom:1px solid var(--linha-suave); color:var(--creme); }
+.dd li:last-child{ border-bottom:none; }
+.dd li span{ display:block; font-size:12.5px; color:var(--areia); margin-top:4px; font-family:var(--quote); font-style:italic; }
+
+/* ============ NAO FAZER ============ */
+.nope{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.nope-item{ background:var(--grafite); border:1px solid var(--linha-suave); border-left:3px solid var(--brasa); border-radius:12px; padding:20px 24px; display:flex; gap:14px; align-items:flex-start; }
+.nope-item .x{ flex-shrink:0; width:24px; height:24px; border-radius:50%; background:rgba(194,100,60,0.18); color:var(--brasa); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; }
+.nope-item p{ font-size:14.5px; color:var(--creme); line-height:1.5; }
+.nope-item p span{ display:block; color:var(--areia); font-size:13px; margin-top:3px; }
+.sign-card{ margin-top:34px; background:var(--grafite); border:1px solid var(--linha); border-radius:16px; padding:40px; text-align:center; }
+.sign-card .star{ color:var(--ouro); font-size:15px; letter-spacing:6px; display:block; margin-bottom:16px; }
+.sign-card .nm{ font-family:var(--serif); font-size:clamp(30px,5vw,50px); color:var(--creme); line-height:1; }
+.sign-card .role{ font-family:var(--mono); font-size:12px; letter-spacing:5px; text-transform:uppercase; color:var(--ouro); margin-top:18px; }
+.sign-card .handle{ font-family:var(--quote); font-style:italic; font-size:19px; color:var(--areia); margin-top:14px; }
+
+footer{ text-align:center; padding:64px 28px 88px; color:var(--areia); }
+footer .star{ color:var(--ouro); letter-spacing:6px; font-size:14px; display:block; margin-bottom:16px; }
+footer .fname{ font-family:var(--serif); font-size:24px; color:var(--creme); margin-bottom:6px; }
+footer .ftag{ font-family:var(--mono); font-size:11px; letter-spacing:3px; text-transform:uppercase; }
+footer .fmeta{ font-size:13px; margin-top:20px; line-height:1.7; }
+
+@media (max-width:880px){
+  .facts{ grid-template-columns:1fr; }
+  .archetypes{ grid-template-columns:1fr; }
+  .values{ grid-template-columns:1fr; }
+  .dims{ grid-template-columns:1fr; }
+  .dodont{ grid-template-columns:1fr; }
+  .nope{ grid-template-columns:1fr; }
+  .cover .arc,.cover .glow{ opacity:.5; }
+}
+@media (max-width:540px){
+  section{ padding:70px 0; }
+  .faith{ padding:30px 26px; }
+  .stats-row{ gap:22px 32px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================ CAPA ============================ -->
+<header class="cover">
+  <div class="arc"></div>
+  <div class="glow"></div>
+  <div class="wrap cover-inner">
+    <span class="star">&#9733; &#9733; &#9733;</span>
+    <div class="pre">Manual de Marca Pessoal &middot; 2026</div>
+    <h1>A pessoa por trás<br><span class="gold">da marca.</span></h1>
+    <div class="sub">Quem é Fabricio Kaempf, e como representá-lo sem errar.</div>
+    <p class="tagline">
+      Este documento é o retrato de <b>quem</b> está por trás da estratégia: história, arquétipos,
+      valores, fé e voz. Serve pra que qualquer conteúdo, proposta ou peça soe como ele de verdade,
+      e nunca como um personagem genérico.
+    </p>
+    <div class="wrap" style="padding:0;">
+      <div class="signature">Documento de marca &middot; <b>FABRICIO KAEMPF</b> &middot; Estrategista, Coprodutor</div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ 01 A PESSOA ============================ -->
+<section id="pessoa">
+  <div class="wrap">
+    <div class="kicker">01 &middot; A Pessoa</div>
+    <h2 class="sec-title">Um gaúcho do interior<br>que aprendeu a ler dados.</h2>
+    <p class="sec-intro">Antes do estrategista, tem um guri de <strong>Santo Cristo, no interior do Rio Grande do Sul</strong>. É de lá que vem o jeito: fala direta, paciência de quem planta, e a noção de que gente se trata olhando no olho. A casa hoje é <strong>Itajaí, Santa Catarina</strong>, mas a raiz nunca saiu do chão gaúcho.</p>
+
+    <div class="prose">
+      <p>Em 2026 ele está numa <strong>temporada em Santo Cristo</strong>, perto dos pais, longe dos quase 700 km que separam a cidade natal da casa em Itajaí. A esposa, <strong>Estefany</strong>, desce em setembro, e em outubro os dois sobem de carro até Brasília. A volta pra Itajaí fica pro fim do ano, quem sabe começo do seguinte.</p>
+      <p>A família também é parte da marca: a mãe, <strong>Oliete Kaempf</strong>, toca a Ok Delícias com Amor (salgados artesanais), e a Estefany é redatora e social media. Negócio, pra ele, raramente é solo. É rede, é gente junto.</p>
+    </div>
+
+    <div class="facts">
+      <div class="fact"><div class="f-lbl">Raiz</div><h4>Santo Cristo, RS</h4><p>Onde tudo começou. O interior gaúcho que dá o sotaque, o chimarrão e a paciência do plantio.</p></div>
+      <div class="fact"><div class="f-lbl">Casa</div><h4>Itajaí, SC</h4><p>Onde o coração encontrou paz. A base da operação e da vida com a Estefany.</p></div>
+      <div class="fact"><div class="f-lbl">Jeito</div><h4>De gente pra gente</h4><p>Guri, bah, mate lavado. Caloroso, direto, sem pose. O interior nunca virou corporativo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 02 A JORNADA ============================ -->
+<section id="jornada">
+  <div class="wrap">
+    <div class="kicker">02 &middot; A Jornada</div>
+    <h2 class="sec-title">De gestor de tráfego<br>a sócio do resultado.</h2>
+    <p class="sec-intro">A trajetória não foi de atalho. Foi de bastidor, de time sustentado quando ninguém sabia o nome dele, até virar referência que entra nos projetos como parceiro, não como fornecedor.</p>
+
+    <div class="timeline">
+      <div class="tl">
+        <div class="t-when">O começo</div>
+        <h4>Gestor de tráfego</h4>
+        <p>Sustentou times e ajudou a faturar sete dígitos antes de ter prestígio. A água que ele guardou sem saber, o repertório que só o tempo dá.</p>
+      </div>
+      <div class="tl">
+        <div class="t-when">2021 &middot; Itajaí</div>
+        <h4>A primeira sala de feras</h4>
+        <p>Recém-chegado, entrou num squad de players conceituados pra lançar uma especialista renomada. Escorregou, corrigiu de madrugada, segurou o tráfego de pé. Descobriu que já era pipoca, mesmo se sentindo grão.</p>
+      </div>
+      <div class="tl">
+        <div class="t-when">A consolidação</div>
+        <h4>Estrategista e coprodutor</h4>
+        <p>Lançamentos e perpétuos, high ticket, infoproduto, e um braço de performance na gringa. Coprodutor entra como sócio, com pele em jogo sobre o número final.</p>
+      </div>
+      <div class="tl">
+        <div class="t-when">Hoje</div>
+        <h4>Menos projetos, mais profundidade</h4>
+        <p>A escolha é deliberada. Canal é ferramenta, estratégia é o que importa. Entra em poucos, entra inteiro.</p>
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat"><div class="num">+R$25M</div><div class="lbl">em mídia paga gerida</div></div>
+      <div class="stat"><div class="num">6 dígitos</div><div class="lbl">múltiplos, em serviços high ticket</div></div>
+      <div class="stat"><div class="num">Brasil + gringa</div><div class="lbl">lançamentos, perpétuos, infoproduto</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 03 ARQUETIPOS ============================ -->
+<section id="arquetipos">
+  <div class="wrap">
+    <div class="kicker">03 &middot; Os Arquétipos</div>
+    <h2 class="sec-title">Cabeça, chão e coração.</h2>
+    <p class="sec-intro">A marca não roda em um arquétipo só. Ela é uma liga de três, e a força está na combinação: <strong>o Sábio</strong> traz a autoridade, <strong>o Cara Comum</strong> mantém os pés no chão, <strong>o Cuidador</strong> põe a pele em jogo. Tira um dos três e a marca desequilibra.</p>
+
+    <div class="arch-intro">
+      <div class="tri">
+        <span>Cabeça: Sábio</span>
+        <span>Chão: Cara Comum</span>
+        <span>Coração: Cuidador</span>
+      </div>
+    </div>
+
+    <div class="archetypes">
+      <div class="arch">
+        <div class="a-body-part">A cabeça</div>
+        <div class="a-name">O Sábio</div>
+        <div class="a-en">The Sage</div>
+        <div class="a-share"><div class="fill" style="width:45%"></div></div>
+        <div class="a-pct">Arquétipo primário &middot; ~45%</div>
+        <p><b>Torna o complexo claro.</b> Guiado por dados, traduz o difícil e desconfia de toda métrica que só elogia. A autoridade vem de entender de verdade, não de gritar mais alto.</p>
+        <p>É o que sustenta o pilar técnico: Andrômeda, ROAS incremental, atribuição. Mas sempre traduzido, nunca em tecniquês.</p>
+        <div class="a-shows"><span class="l">Aparece quando</span><span>"ROAS reportado é opinião. ROAS incremental é fato."</span></div>
+      </div>
+
+      <div class="arch">
+        <div class="a-body-part">O chão</div>
+        <div class="a-name">O Cara Comum</div>
+        <div class="a-en">The Everyman</div>
+        <div class="a-share"><div class="fill" style="width:32%"></div></div>
+        <div class="a-pct">Arquétipo de base &middot; ~32%</div>
+        <p><b>Um de nós, nunca acima.</b> O gaúcho do interior que fala de gente pra gente. É o que humaniza o Sábio e faz a mensagem colar: quem viveu o campo, não quem leu sobre ele.</p>
+        <p>É a digital que nenhum template copia: chimarrão, estrada, o guri que já foi grão. Acessível sem ser raso.</p>
+        <div class="a-shows"><span class="l">Aparece quando</span><span>"Meu pai não sabe o que é ROAS."</span></div>
+      </div>
+
+      <div class="arch">
+        <div class="a-body-part">O coração</div>
+        <div class="a-name">O Cuidador</div>
+        <div class="a-en">The Caregiver</div>
+        <div class="a-share"><div class="fill" style="width:23%"></div></div>
+        <div class="a-pct">Arquétipo do caráter &middot; ~23%</div>
+        <p><b>Pele em jogo, cuidado no detalhe.</b> Entra como sócio, protege o dinheiro do cliente, serve mesmo quando ninguém está olhando. É aqui que a fé mora, como caráter, nunca como discurso.</p>
+        <p>Prefere poucos clientes bem cuidados a muitos mal servidos. Responsabilidade sobre o resultado é pessoal.</p>
+        <div class="a-shows"><span class="l">Aparece quando</span><span>"O contrato fechou por uma cadeira puxada sem plateia."</span></div>
+      </div>
+    </div>
+
+    <div class="shadow">
+      <h5>A sombra a vigiar &middot; O Herói que se gaba</h5>
+      <p>Existe um quarto arquétipo rondando: <b>o Herói</b> (resiliência, "saí inteiro", carregou o lançamento). Ele é real e conquistou o direito. Mas solto vira autopromoção, o oposto do Cara Comum e do Cuidador. <b>A regra:</b> a conquista aparece como confissão que custou caro, nunca como troféu erguido. Herói que se gaba quebra a marca inteira.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 04 VALORES ============================ -->
+<section id="valores">
+  <div class="wrap">
+    <div class="kicker">04 &middot; Bússola de Valores</div>
+    <h2 class="sec-title">O que guia a decisão<br>quando ninguém está vendo.</h2>
+    <p class="sec-intro">Marca de pessoa se prova na escolha difícil. Estes são os valores que, na dúvida, desempatam.</p>
+
+    <div class="values">
+      <div class="value"><div class="v-ix">01</div><div><h4>Caráter acima de conversão</h4><p>O jeito de tratar gente vale mais que a venda fechada. Ética quando ninguém vê é o padrão, não a exceção.</p></div></div>
+      <div class="value"><div class="v-ix">02</div><div><h4>Dado antes de opinião</h4><p>Mostra o número primeiro. Desconfia do que só elogia. O complexo vira claro, esse é o ofício.</p></div></div>
+      <div class="value"><div class="v-ix">03</div><div><h4>Sócio, não fornecedor</h4><p>Entra nos projetos com responsabilidade direta sobre o resultado. Pele em jogo, não execução vazia.</p></div></div>
+      <div class="value"><div class="v-ix">04</div><div><h4>Profundidade sobre volume</h4><p>Menos projetos, mais atenção. Prefere fazer pouco e bem feito a muito e raso.</p></div></div>
+      <div class="value"><div class="v-ix">05</div><div><h4>Verdade sobre polimento</h4><p>Verdade editada é forte, ficção descoberta quebra tudo. Conta a história real, com as cicatrizes.</p></div></div>
+      <div class="value"><div class="v-ix">06</div><div><h4>Paciência de quem planta</h4><p>Coisa boa não nasce apressada. Resultado que dura se constrói no fundamento, não no atalho.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 05 A FE ============================ -->
+<section id="fe">
+  <div class="wrap">
+    <div class="kicker">05 &middot; A Fé</div>
+    <h2 class="sec-title">Aparece na vida,<br>nunca no palanque.</h2>
+    <p class="sec-intro">A fé é parte central de quem ele é, e por isso mesmo exige o maior cuidado de todo o manual. Tratar errado aqui destrói a autenticidade que sustenta a marca inteira.</p>
+
+    <div class="faith">
+      <p class="fq">"Não se força nada. As pessoas te reconhecem pelos <span class="hl">mínimos detalhes.</span>"</p>
+      <p>A fé dele <b>não é de berço</b>. Foi coroinha em Santo Cristo, catequese, Crisma completa, servindo talvez pelos motivos errados, mas cumprindo o que devia. Por anos, foi obrigação de domingo. <b>O encontro de verdade veio depois, já adulto</b>, e é recente. Hoje frequenta a Igreja Reviver.</p>
+      <p>Essa história importa porque tem arco. Não é o testemunho pronto de quem sempre creu, é o de quem se converteu de verdade. E é essa a versão que se conta, porque é a verdadeira. <b>A fé aparece no gesto:</b> a decisão ética que custou dinheiro, a paz no lançamento que quebrou, a cadeira puxada quando ninguém deveria estar vendo.</p>
+      <div class="rule-line">REGRA INEGOCIÁVEL: o nome de Jesus nunca vira slogan, headline, assinatura ou âncora de venda. Quem prega afasta. Quem vive atrai.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 06 A VOZ ============================ -->
+<section id="voz">
+  <div class="wrap">
+    <div class="kicker">06 &middot; A Voz</div>
+    <h2 class="sec-title">Cena, campo e verdade.</h2>
+    <p class="sec-intro">A voz é a soma dos três arquétipos: a clareza do Sábio, o calor do Cara Comum, o cuidado do Cuidador. <strong>Direto, de campo, caloroso, sem jargão e sem promessa vazia.</strong> Humano escreve cena, IA escreve tese.</p>
+
+    <div class="dims">
+      <div class="dim"><div class="d-top">Registro</div><p>Trata por você, fala de gente pra gente. <b>Profissional sem ser engessado.</b></p></div>
+      <div class="dim"><div class="d-top">Humor</div><p>Ironia leve, autodepreciação na medida. <b>Tempero, nunca o prato.</b></p></div>
+      <div class="dim"><div class="d-top">Ritmo</div><p>Frase longa e frase curta se alternam, com apartes entre parênteses. <b>Nunca metralhadora de efeito.</b></p></div>
+      <div class="dim"><div class="d-top">Regional</div><p>Guri, bah, mate lavado, os 700 km de estrada. <b>O detalhe que nenhum template copia.</b></p></div>
+    </div>
+
+    <div class="dodont">
+      <div class="dd do">
+        <h5>Soa como ele</h5>
+        <ul>
+          <li>Abre no meio de uma cena real<span>"Ontem, no chimarrão da tarde, meu pai soltou..."</span></li>
+          <li>Confissão que custa caro<span>"Escorreguei no remarketing. Corrigi de madrugada, com a mão tremendo."</span></li>
+          <li>Traduz o técnico<span>"ROAS é quanto cada real investido te devolve. Simples assim."</span></li>
+          <li>Detalhe que só ele saberia<span>Cheiro, lugar, frase torta do interior.</span></li>
+        </ul>
+      </div>
+      <div class="dd dont">
+        <h5>Nunca soa como ele</h5>
+        <ul>
+          <li>Tese ou lição genérica de abertura<span>"No mundo digital de hoje..."</span></li>
+          <li>Staccato de frase de efeito empilhada<span>O ritmo perfeito demais é a assinatura da IA.</span></li>
+          <li>Lista com paralelismo simétrico<span>Três itens bonitinhos demais denunciam o template.</span></li>
+          <li>Jargão corporativo ou promessa mágica<span>"Sinergia", "disrupção", "faturamento garantido".</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 07 ASSINATURA & NAO FAZER ============================ -->
+<section id="assinatura">
+  <div class="wrap">
+    <div class="kicker">07 &middot; Assinatura &amp; Régua do Não Fazer</div>
+    <h2 class="sec-title">O que protege a marca<br>é a disciplina do que ela recusa.</h2>
+    <p class="sec-intro">Coerência se constrói tanto pelo que se faz quanto pelo que se evita. Estes são os limites que mantêm a marca sendo ela mesma.</p>
+
+    <div class="nope">
+      <div class="nope-item"><span class="x">&#10005;</span><p>Fé como slogan ou gatilho<span>O nome de Jesus não ancora headline, assinatura nem CTA. Aparece no caráter e no detalhe.</span></p></div>
+      <div class="nope-item"><span class="x">&#10005;</span><p>Travessão em qualquer texto<span>Regra global inegociável. Use vírgula, ponto, dois pontos ou parênteses no lugar.</span></p></div>
+      <div class="nope-item"><span class="x">&#10005;</span><p>Herói que se gaba<span>Conquista entra como confissão, nunca como troféu. Humildade é parte da marca.</span></p></div>
+      <div class="nope-item"><span class="x">&#10005;</span><p>Jargão corporativo e promessa vazia<span>Nada de sinergia, disrupção ou resultado garantido. A voz é de campo, com lastro.</span></p></div>
+      <div class="nope-item"><span class="x">&#10005;</span><p>História inventada como real<span>Verdade editada é forte. Ficção descoberta destrói a confiança.</span></p></div>
+      <div class="nope-item"><span class="x">&#10005;</span><p>Texto com cheiro de IA<span>Cena antes de tese, ritmo irregular, sempre um detalhe que só o Fabricio saberia.</span></p></div>
+    </div>
+
+    <div class="sign-card">
+      <span class="star">&#9733; &#9733; &#9733;</span>
+      <div class="nm">Fabricio Kaempf</div>
+      <div class="role">Estrategista &middot; Coprodutor</div>
+      <div class="handle">@fabriciokaempf</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="star">&#9733; &#9733; &#9733;</span>
+  <div class="fname">Fabricio Kaempf</div>
+  <div class="ftag">A PESSOA POR TRÁS DA MARCA</div>
+  <div class="fmeta">
+    Manual de Marca Pessoal &middot; 2026<br>
+    Santo Cristo, RS &middot; Itajaí, SC &middot; @fabriciokaempf
+  </div>
+</footer>
+
+</body>
+</html>

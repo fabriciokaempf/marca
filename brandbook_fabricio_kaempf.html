@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Brandbook | Fabricio Kaempf, Growth &amp; Performance</title>
+<style>
+/* ============================================================
+   BRANDBOOK FABRICIO KAEMPF
+   Sistema de identidade visual, growth & performance.
+   A propria pagina encarna a marca: onyx, ouro, creme.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Gloock&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&display=swap');
+
+:root{
+  /* Paleta de marca, valores exatos do sistema */
+  --onyx:        #0E0F12; /* base, fundo */
+  --grafite:     #15171C; /* superficies, cards */
+  --grafite-2:   #1B1E25; /* superficie elevada */
+  --ouro:        #C9A24B; /* acento primario, CTA, autoridade */
+  --ouro-claro:  #E6C877; /* brilhos, gradientes */
+  --brasa:       #C2643C; /* acento quente, raiz gaucha */
+  --creme:       #F2E9D6; /* texto primario no escuro */
+  --areia:       #9A9082; /* texto secundario, suave */
+  --azul:        #1E2A44; /* terciario, dados, raro */
+
+  --linha:       rgba(201,162,75,0.22); /* fio hairline ouro */
+  --linha-suave: rgba(242,233,214,0.10);
+
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --serif:'Gloock', Georgia, 'Times New Roman', serif;
+  --mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+  --quote:'Cormorant Garamond', Georgia, serif;
+
+  --maxw: 1080px;
+}
+
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+
+html{ scroll-behavior:smooth; }
+
+body{
+  background:
+    radial-gradient(1200px 700px at 78% -8%, rgba(201,162,75,0.10), transparent 60%),
+    radial-gradient(900px 600px at 8% 12%, rgba(194,100,60,0.06), transparent 55%),
+    var(--onyx);
+  color:var(--creme);
+  font-family:var(--sans);
+  font-weight:400;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+/* ====================== ESTRUTURA ====================== */
+.wrap{ max-width:var(--maxw); margin:0 auto; padding:0 28px; }
+
+section{ padding:104px 0; border-bottom:1px solid var(--linha-suave); }
+section:last-of-type{ border-bottom:none; }
+
+.kicker{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:3.5px;
+  text-transform:uppercase;
+  color:var(--ouro);
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:22px;
+}
+.kicker::before{
+  content:"";
+  width:34px; height:1px;
+  background:var(--ouro);
+  display:inline-block;
+}
+
+h2.sec-title{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(30px,4.4vw,52px);
+  line-height:1.05;
+  color:var(--creme);
+  letter-spacing:-0.5px;
+  margin-bottom:18px;
+}
+.sec-intro{
+  max-width:680px;
+  color:var(--areia);
+  font-size:17px;
+  line-height:1.75;
+  margin-bottom:54px;
+}
+.sec-intro strong{ color:var(--creme); font-weight:500; }
+
+/* ====================== CAPA ====================== */
+.cover{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+  border-bottom:1px solid var(--linha);
+  padding:90px 0 70px;
+}
+/* arco / circulo dourado, motivo de assinatura do feed */
+.cover .arc{
+  position:absolute;
+  right:-260px; top:50%;
+  transform:translateY(-50%);
+  width:760px; height:760px;
+  border-radius:50%;
+  border:1.5px solid var(--linha);
+  box-shadow:
+    inset 0 0 120px rgba(201,162,75,0.10),
+    0 0 0 1px rgba(201,162,75,0.05);
+  pointer-events:none;
+}
+.cover .arc::after{
+  content:"";
+  position:absolute;
+  inset:90px;
+  border-radius:50%;
+  border:1px solid rgba(201,162,75,0.12);
+}
+.cover .glow{
+  position:absolute;
+  right:-60px; top:50%;
+  transform:translateY(-50%);
+  width:520px; height:520px;
+  background:radial-gradient(circle, rgba(230,200,119,0.16), transparent 62%);
+  pointer-events:none;
+}
+.cover-inner{ position:relative; z-index:2; }
+
+.cover .star{
+  display:inline-block;
+  color:var(--ouro);
+  font-size:20px;
+  margin-bottom:30px;
+  letter-spacing:6px;
+}
+.cover .pre{
+  font-family:var(--mono);
+  font-size:13px;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  color:var(--areia);
+  margin-bottom:28px;
+}
+.cover h1{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(46px,9vw,118px);
+  line-height:0.94;
+  letter-spacing:-1.5px;
+  color:var(--creme);
+  margin-bottom:8px;
+}
+.cover h1 .gold{
+  background:linear-gradient(96deg,var(--ouro-claro),var(--ouro) 55%,var(--brasa));
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.cover .role{
+  font-family:var(--quote);
+  font-style:italic;
+  font-size:clamp(22px,3.2vw,34px);
+  color:var(--ouro-claro);
+  margin:18px 0 30px;
+  letter-spacing:0.3px;
+}
+.cover .tagline{
+  max-width:560px;
+  font-size:18px;
+  line-height:1.7;
+  color:var(--creme);
+}
+.cover .tagline span{ color:var(--areia); }
+
+.cover .meta{
+  margin-top:54px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:34px 56px;
+  align-items:flex-end;
+}
+.cover .meta .stat .num{
+  font-family:var(--serif);
+  font-size:38px;
+  color:var(--ouro);
+  line-height:1;
+}
+.cover .meta .stat .lbl{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--areia);
+  margin-top:8px;
+}
+.cover .signature{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:6px;
+  text-transform:uppercase;
+  color:var(--areia);
+  border-top:1px solid var(--linha);
+  padding-top:18px;
+  margin-top:auto;
+}
+.cover .signature b{ color:var(--ouro); font-weight:500; }
+
+/* ====================== ESSENCIA / PILARES ====================== */
+.position-grid{
+  display:grid;
+  grid-template-columns:1.15fr 1fr;
+  gap:56px;
+  align-items:start;
+}
+.position-lead{
+  font-family:var(--quote);
+  font-style:italic;
+  font-size:25px;
+  line-height:1.5;
+  color:var(--creme);
+}
+.position-lead .hl{ color:var(--ouro-claro); font-style:normal; }
+.position-body p{ color:var(--areia); font-size:16px; margin-bottom:16px; }
+.position-body p strong{ color:var(--creme); font-weight:500; }
+
+.pillars{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+  margin-top:60px;
+}
+.pillar{
+  background:linear-gradient(180deg,var(--grafite-2),var(--grafite));
+  border:1px solid var(--linha-suave);
+  border-radius:14px;
+  padding:30px 24px 28px;
+  position:relative;
+  overflow:hidden;
+  transition:border-color .3s ease, transform .3s ease;
+}
+.pillar::before{
+  content:"";
+  position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg,var(--ouro),transparent);
+}
+.pillar:hover{ border-color:var(--linha); transform:translateY(-3px); }
+.pillar .ix{
+  font-family:var(--mono);
+  font-size:12px;
+  color:var(--ouro);
+  letter-spacing:2px;
+  margin-bottom:18px;
+}
+.pillar .pico{ width:30px; height:30px; margin-bottom:16px; display:block; }
+.pillar h4{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:21px;
+  color:var(--creme);
+  margin-bottom:10px;
+}
+.pillar p{ font-size:14px; color:var(--areia); line-height:1.6; }
+
+/* ====================== TOM DE VOZ ====================== */
+.voice-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px 56px;
+  margin-bottom:64px;
+}
+.dim{
+  border:1px solid var(--linha-suave);
+  border-radius:14px;
+  padding:26px 28px;
+  background:var(--grafite);
+}
+.dim .dim-top{
+  display:flex; justify-content:space-between; align-items:baseline;
+  font-family:var(--mono); font-size:12px; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--areia); margin-bottom:14px;
+}
+.dim .dim-top .l{ color:var(--creme); }
+.dim .dim-top .r{ color:var(--ouro); }
+.track{
+  height:8px; border-radius:6px;
+  background:rgba(242,233,214,0.08);
+  position:relative; overflow:hidden;
+}
+.track .fill{
+  position:absolute; top:0; left:0; bottom:0;
+  background:linear-gradient(90deg,var(--brasa),var(--ouro) 70%,var(--ouro-claro));
+  border-radius:6px;
+}
+.track .knob{
+  position:absolute; top:50%; transform:translate(-50%,-50%);
+  width:14px; height:14px; border-radius:50%;
+  background:var(--creme); border:3px solid var(--onyx);
+  box-shadow:0 0 0 1px var(--ouro);
+}
+.dim .scale{
+  display:flex; justify-content:space-between;
+  font-family:var(--mono); font-size:10.5px; letter-spacing:1px;
+  text-transform:uppercase; color:var(--areia); margin-top:12px;
+}
+.dim .note{ font-size:13.5px; color:var(--areia); margin-top:16px; line-height:1.6; }
+.dim .note b{ color:var(--creme); font-weight:500; }
+
+.dodont{
+  display:grid; grid-template-columns:1fr 1fr; gap:24px;
+}
+.dd{
+  border-radius:14px; padding:28px 30px;
+  border:1px solid var(--linha-suave);
+}
+.dd.do{ background:linear-gradient(180deg,rgba(201,162,75,0.10),var(--grafite)); border-color:var(--linha); }
+.dd.dont{ background:var(--grafite); }
+.dd h5{
+  font-family:var(--mono); font-size:13px; letter-spacing:2px;
+  text-transform:uppercase; margin-bottom:20px; display:flex; align-items:center; gap:10px;
+}
+.dd.do h5{ color:var(--ouro); }
+.dd.dont h5{ color:var(--areia); }
+.dd .badge{
+  width:22px; height:22px; border-radius:50%;
+  display:inline-flex; align-items:center; justify-content:center;
+  font-size:13px; font-weight:700;
+}
+.dd.do .badge{ background:var(--ouro); color:var(--onyx); }
+.dd.dont .badge{ background:rgba(242,233,214,0.12); color:var(--areia); }
+.dd ul{ list-style:none; }
+.dd li{
+  font-size:15px; line-height:1.5; padding:11px 0;
+  border-bottom:1px solid var(--linha-suave);
+  color:var(--creme);
+}
+.dd.dont li{ color:var(--areia); }
+.dd li:last-child{ border-bottom:none; }
+.dd li .ex{ display:block; font-size:13px; color:var(--areia); margin-top:5px; font-style:italic; font-family:var(--quote); }
+.dd.do li .ex{ color:var(--ouro-claro); }
+
+/* ====================== PALETA ====================== */
+.swatches{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+  margin-bottom:40px;
+}
+.swatch{
+  border-radius:14px; overflow:hidden;
+  border:1px solid var(--linha-suave);
+  background:var(--grafite);
+  display:flex; flex-direction:column;
+}
+.swatch .chip{ height:120px; position:relative; }
+.swatch .chip .hex{
+  position:absolute; left:16px; bottom:14px;
+  font-family:var(--mono); font-size:13px; letter-spacing:1px;
+  padding:4px 9px; border-radius:6px;
+  background:rgba(14,15,18,0.55); color:#fff;
+  backdrop-filter:blur(2px);
+}
+.swatch .body{ padding:18px 18px 22px; }
+.swatch .body .nm{ font-family:var(--serif); font-size:19px; color:var(--creme); margin-bottom:4px; }
+.swatch .body .role{ font-family:var(--mono); font-size:10.5px; letter-spacing:1.5px; text-transform:uppercase; color:var(--ouro); margin-bottom:12px; }
+.swatch .body .why{ font-size:13px; color:var(--areia); line-height:1.55; }
+
+.contrast-tests{
+  display:grid; grid-template-columns:1fr 1fr; gap:24px;
+}
+.ct{ border-radius:14px; padding:30px 32px; border:1px solid var(--linha-suave); }
+.ct.dark{ background:var(--onyx); }
+.ct.light{ background:var(--creme); }
+.ct .ct-lbl{
+  font-family:var(--mono); font-size:11px; letter-spacing:2px;
+  text-transform:uppercase; margin-bottom:18px;
+}
+.ct.dark .ct-lbl{ color:var(--ouro); }
+.ct.light .ct-lbl{ color:var(--brasa); }
+.ct .row{ display:flex; align-items:center; gap:14px; padding:9px 0; font-size:15px; }
+.ct .dot{ width:24px; height:24px; border-radius:50%; flex-shrink:0; border:1px solid rgba(0,0,0,0.15); }
+.ct.dark .big{ font-family:var(--serif); font-size:30px; }
+.ct.light .big{ font-family:var(--serif); font-size:30px; }
+.ct.dark .big.gold{ color:var(--ouro); }
+.ct.dark .big.cream{ color:var(--creme); }
+.ct.light .big.gold{ color:#9A7B2E; } /* ouro escurecido para passar contraste no claro */
+.ct.light .big.ink{ color:var(--onyx); }
+.ct .pass{
+  font-family:var(--mono); font-size:11px; letter-spacing:1px;
+  margin-left:auto; padding:3px 8px; border-radius:5px;
+}
+.ct.dark .pass{ background:rgba(201,162,75,0.18); color:var(--ouro-claro); }
+.ct.light .pass{ background:rgba(30,42,68,0.10); color:var(--azul); }
+.ct .smalltxt{ font-size:13px; }
+.ct.light .smalltxt{ color:#3a342a; }
+.ct.light .row{ color:#2a261f; }
+
+/* ====================== TIPOGRAFIA ====================== */
+.type-row{
+  display:grid;
+  grid-template-columns:170px 1fr;
+  gap:30px;
+  padding:30px 0;
+  border-bottom:1px solid var(--linha-suave);
+  align-items:baseline;
+}
+.type-row:last-child{ border-bottom:none; }
+.type-meta .role{ font-family:var(--mono); font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--ouro); margin-bottom:8px; }
+.type-meta .spec{ font-size:13px; color:var(--areia); line-height:1.5; }
+.type-meta .spec b{ color:var(--creme); font-weight:500; }
+.t-h1{ font-family:var(--serif); font-size:58px; line-height:1; color:var(--creme); letter-spacing:-1px; }
+.t-h2{ font-family:var(--serif); font-size:40px; line-height:1.05; color:var(--creme); }
+.t-h3{ font-family:var(--sans); font-weight:700; font-size:24px; color:var(--creme); letter-spacing:0.2px; }
+.t-sub{ font-family:var(--quote); font-style:italic; font-size:26px; color:var(--ouro-claro); }
+.t-body{ font-family:var(--sans); font-weight:400; font-size:17px; color:var(--creme); line-height:1.7; max-width:560px; }
+.t-small{ font-family:var(--sans); font-weight:500; font-size:13px; color:var(--areia); letter-spacing:0.3px; }
+.t-mono{ font-family:var(--mono); font-size:15px; color:var(--ouro); letter-spacing:1px; }
+
+.sig-demo{
+  margin-top:54px;
+  background:var(--grafite);
+  border:1px solid var(--linha);
+  border-radius:16px;
+  padding:48px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.sig-demo .star{ color:var(--ouro); font-size:16px; letter-spacing:6px; display:block; margin-bottom:18px; }
+.sig-demo .sig-name{
+  font-family:var(--serif); font-size:clamp(34px,6vw,62px);
+  color:var(--creme); line-height:1; letter-spacing:-0.5px;
+}
+.sig-demo .sig-caps{
+  font-family:var(--mono); font-size:13px; letter-spacing:7px;
+  text-transform:uppercase; color:var(--ouro); margin-top:22px;
+}
+.sig-demo .sig-rule{ width:60px; height:1px; background:var(--linha); margin:22px auto; }
+.sig-demo .sig-role{ font-family:var(--quote); font-style:italic; font-size:20px; color:var(--areia); }
+
+/* ====================== ELEMENTOS VISUAIS ====================== */
+.elem-grid{ display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+.elem-card{
+  background:var(--grafite); border:1px solid var(--linha-suave);
+  border-radius:16px; padding:34px;
+}
+.elem-card h4{
+  font-family:var(--mono); font-size:12px; letter-spacing:2px;
+  text-transform:uppercase; color:var(--ouro); margin-bottom:24px;
+}
+/* botoes / CTA */
+.btn{
+  display:inline-flex; align-items:center; gap:10px;
+  font-family:var(--sans); font-weight:600; font-size:15px;
+  padding:14px 26px; border-radius:10px; border:none;
+  cursor:pointer; text-decoration:none; letter-spacing:0.2px;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.btn-primary{
+  background:linear-gradient(96deg,var(--ouro-claro),var(--ouro));
+  color:var(--onyx);
+  box-shadow:0 8px 24px rgba(201,162,75,0.25);
+}
+.btn-primary:hover{ transform:translateY(-2px); box-shadow:0 12px 30px rgba(201,162,75,0.35); }
+.btn-ghost{
+  background:transparent; color:var(--creme);
+  border:1px solid var(--ouro);
+}
+.btn-ghost:hover{ background:rgba(201,162,75,0.10); }
+.btn-brasa{
+  background:var(--brasa); color:var(--creme);
+}
+.btn-row{ display:flex; flex-wrap:wrap; gap:16px; align-items:center; }
+.btn .arr{ font-family:var(--mono); }
+
+/* icones, tracado fino dourado */
+.icon-set{ display:flex; flex-wrap:wrap; gap:22px; }
+.ic{ text-align:center; width:84px; }
+.ic svg{ width:40px; height:40px; }
+.ic .ic-lbl{ font-family:var(--mono); font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--areia); margin-top:10px; }
+
+/* formas / patterns */
+.shapes{ display:flex; gap:26px; flex-wrap:wrap; align-items:center; }
+.shape{ text-align:center; }
+.shape .sh-box{
+  width:120px; height:120px; border-radius:14px;
+  background:var(--onyx); position:relative; overflow:hidden;
+  border:1px solid var(--linha-suave);
+  display:flex; align-items:center; justify-content:center;
+}
+.shape .sh-lbl{ font-family:var(--mono); font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--areia); margin-top:10px; }
+.ring{ width:74px; height:74px; border-radius:50%; border:1.5px solid var(--ouro); position:relative; }
+.ring::after{ content:""; position:absolute; inset:12px; border-radius:50%; border:1px solid rgba(201,162,75,0.4); }
+.hair{ width:90px; height:90px; }
+.starshape{ color:var(--ouro); font-size:54px; line-height:1; }
+.dotgrid{ width:100%; height:100%; background-image:radial-gradient(var(--linha) 1px, transparent 1px); background-size:14px 14px; opacity:.8; }
+
+/* direcao fotografica */
+.photo-dir{
+  margin-top:24px;
+  display:grid; grid-template-columns:repeat(4,1fr); gap:14px;
+}
+.pd{
+  height:150px; border-radius:12px; position:relative; overflow:hidden;
+  border:1px solid var(--linha-suave); display:flex; align-items:flex-end;
+  padding:14px;
+}
+.pd .pd-lbl{ font-family:var(--mono); font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--creme); position:relative; z-index:2; }
+.pd-1{ background:linear-gradient(150deg,#3a2a1a,var(--onyx)); }
+.pd-1::before{ content:""; position:absolute; right:-30px; top:-30px; width:140px; height:140px; border-radius:50%; background:radial-gradient(circle,rgba(230,200,119,0.5),transparent 65%); }
+.pd-2{ background:linear-gradient(160deg,#241a12,#0a0b0d); }
+.pd-2::before{ content:""; position:absolute; left:20px; bottom:40px; width:30px; height:60px; background:linear-gradient(var(--brasa),transparent); border-radius:40%; filter:blur(3px); }
+.pd-3{ background:linear-gradient(150deg,var(--azul),var(--onyx)); }
+.pd-4{ background:linear-gradient(150deg,#2a1d12,#15171C); }
+.pd-4::before{ content:"\2605"; position:absolute; top:18px; right:20px; color:var(--ouro); font-size:22px; opacity:.6; }
+.photo-note{ font-size:13px; color:var(--areia); margin-top:18px; line-height:1.6; }
+.photo-note b{ color:var(--creme); font-weight:500; }
+
+/* ====================== APLICACOES / MOCKUPS ====================== */
+.mockups{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:26px; align-items:start; }
+.mock-label{ font-family:var(--mono); font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--ouro); margin-bottom:14px; }
+
+/* post de feed */
+.m-feed{
+  aspect-ratio:1/1; border-radius:16px; overflow:hidden; position:relative;
+  background:linear-gradient(165deg,#1a1206,var(--onyx) 70%);
+  border:1px solid var(--linha);
+  padding:30px; display:flex; flex-direction:column; justify-content:space-between;
+}
+.m-feed::before{ content:""; position:absolute; right:-90px; top:-90px; width:260px; height:260px; border-radius:50%; border:1px solid var(--linha); box-shadow:inset 0 0 60px rgba(201,162,75,0.18); }
+.m-feed .mf-star{ color:var(--ouro); letter-spacing:5px; font-size:13px; position:relative; z-index:2; }
+.m-feed .mf-title{ font-family:var(--serif); font-size:30px; line-height:1.08; color:var(--creme); position:relative; z-index:2; }
+.m-feed .mf-title em{ font-family:var(--quote); font-style:italic; color:var(--ouro-claro); }
+.m-feed .mf-sign{ font-family:var(--mono); font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--areia); position:relative; z-index:2; }
+
+/* capa de destaque */
+.highlights{ display:flex; gap:16px; justify-content:center; padding-top:6px; }
+.hl-circle{
+  width:88px; height:88px; border-radius:50%;
+  background:var(--grafite);
+  border:2px solid var(--ouro);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:6px;
+}
+.hl-circle .hl-star{ color:var(--ouro); font-size:22px; }
+.hl-circle .hl-tx{ font-family:var(--mono); font-size:8.5px; letter-spacing:1.5px; text-transform:uppercase; color:var(--areia); }
+.hl-cap{ font-family:var(--mono); font-size:8.5px; letter-spacing:1px; text-transform:uppercase; color:var(--areia); text-align:center; margin-top:12px; }
+
+/* foto com header / assinatura */
+.m-photo{
+  aspect-ratio:4/5; border-radius:16px; overflow:hidden; position:relative;
+  background:linear-gradient(180deg,#3a2a18 0%,#1a130b 55%,var(--onyx) 100%);
+  border:1px solid var(--linha-suave);
+  display:flex; flex-direction:column; justify-content:space-between; padding:22px;
+}
+.m-photo::after{ content:""; position:absolute; left:50%; top:42%; transform:translate(-50%,-50%); width:150px; height:150px; border-radius:50%; background:radial-gradient(circle,rgba(230,200,119,0.22),transparent 60%); }
+.m-photo .ph-top{ display:flex; justify-content:space-between; align-items:center; position:relative; z-index:2; }
+.m-photo .ph-top .ph-name{ font-family:var(--mono); font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--creme); }
+.m-photo .ph-top .ph-star{ color:var(--ouro); }
+.m-photo .ph-bottom{ position:relative; z-index:2; border-top:1px solid var(--linha); padding-top:14px; }
+.m-photo .ph-bottom .ph-role{ font-family:var(--quote); font-style:italic; font-size:18px; color:var(--ouro-claro); }
+.m-photo .ph-bottom .ph-handle{ font-family:var(--mono); font-size:10px; letter-spacing:2px; color:var(--areia); margin-top:4px; }
+
+/* ====================== NAO FAZER ====================== */
+.nope{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+.nope-item{
+  background:var(--grafite); border:1px solid var(--linha-suave);
+  border-left:3px solid var(--brasa);
+  border-radius:12px; padding:22px 26px;
+  display:flex; gap:16px; align-items:flex-start;
+}
+.nope-item .x{
+  flex-shrink:0; width:26px; height:26px; border-radius:50%;
+  background:rgba(194,100,60,0.18); color:var(--brasa);
+  display:flex; align-items:center; justify-content:center; font-weight:700; font-size:15px;
+}
+.nope-item p{ font-size:15px; color:var(--creme); line-height:1.5; }
+.nope-item p span{ display:block; color:var(--areia); font-size:13px; margin-top:4px; }
+
+/* ====================== RODAPE ====================== */
+footer{
+  text-align:center; padding:70px 28px 90px; color:var(--areia);
+}
+footer .star{ color:var(--ouro); letter-spacing:6px; font-size:14px; display:block; margin-bottom:18px; }
+footer .fname{ font-family:var(--serif); font-size:26px; color:var(--creme); margin-bottom:8px; }
+footer .ftag{ font-family:var(--mono); font-size:11px; letter-spacing:3px; text-transform:uppercase; }
+footer .fmeta{ font-size:13px; margin-top:24px; line-height:1.7; }
+
+/* ====================== RESPONSIVO ====================== */
+@media (max-width:900px){
+  .position-grid{ grid-template-columns:1fr; gap:34px; }
+  .pillars{ grid-template-columns:1fr 1fr; }
+  .voice-grid{ grid-template-columns:1fr; }
+  .dodont{ grid-template-columns:1fr; }
+  .swatches{ grid-template-columns:1fr 1fr; }
+  .contrast-tests{ grid-template-columns:1fr; }
+  .elem-grid{ grid-template-columns:1fr; }
+  .photo-dir{ grid-template-columns:1fr 1fr; }
+  .mockups{ grid-template-columns:1fr; max-width:420px; margin:0 auto; }
+  .nope{ grid-template-columns:1fr; }
+  .cover .arc, .cover .glow{ opacity:.5; }
+}
+@media (max-width:560px){
+  section{ padding:72px 0; }
+  .pillars, .swatches{ grid-template-columns:1fr; }
+  .type-row{ grid-template-columns:1fr; gap:14px; }
+  .t-h1{ font-size:42px; }
+  .photo-dir{ grid-template-columns:1fr; }
+  .cover .meta{ gap:24px 36px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================ CAPA ============================ -->
+<header class="cover">
+  <div class="arc"></div>
+  <div class="glow"></div>
+  <div class="wrap cover-inner">
+    <span class="star">&#9733; &#9733; &#9733;</span>
+    <div class="pre">Brandbook &middot; Sistema de Identidade &middot; 2026</div>
+    <h1>Fabricio<br><span class="gold">Kaempf</span></h1>
+    <div class="role">Growth &amp; Performance</div>
+    <p class="tagline">
+      Tornar o complexo claro e o claro lucrativo.
+      <span>Estratégia guiada por dados, execução com responsabilidade direta sobre o resultado.</span>
+    </p>
+
+    <div class="meta">
+      <div class="stat">
+        <div class="num">+R$25M</div>
+        <div class="lbl">em mídia paga gerida</div>
+      </div>
+      <div class="stat">
+        <div class="num">2</div>
+        <div class="lbl">frentes, coprodução e consultoria</div>
+      </div>
+      <div class="stat">
+        <div class="num">RS &middot; SC</div>
+        <div class="lbl">raiz gaúcha, casa em Itajaí</div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="signature">Documento de marca &middot; <b>FABRICIO KAEMPF</b> &middot; Gestor, Estrategista, Coprodutor</div>
+  </div>
+</header>
+
+<!-- ============================ ESSENCIA ============================ -->
+<section id="essencia">
+  <div class="wrap">
+    <div class="kicker">01 &middot; Essência &amp; Posicionamento</div>
+    <h2 class="sec-title">Quem entra como sócio<br>do resultado, não como fornecedor.</h2>
+
+    <div class="position-grid">
+      <p class="position-lead">
+        Fabricio Kaempf gere tráfego pago e estratégia de crescimento para marcas, produtores digitais e empresas com propósito.
+        <span class="hl">Como coprodutor, assume cadeira de sócio estratégico</span>, com responsabilidade direta sobre o número final. Como consultor, atua pontualmente: identifica o entrave, propõe o caminho, acompanha a execução.
+      </p>
+      <div class="position-body">
+        <p>O método é guiado por dados, mas o produto é clareza. Lançamentos e perpétuos são a maior expertise, com <strong>mais de R$25 milhões</strong> em mídia gerida em Meta Ads, Google Ads e qualquer canal que o ecossistema do cliente pedir.</p>
+        <p>A escolha é deliberada: <strong>menos projetos, mais profundidade</strong>. Quem busca estruturar, consolidar e escalar uma operação encontra aqui alguém que fala como quem viveu o campo, não como quem leu sobre ele.</p>
+      </div>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="ix">P01</div>
+        <svg class="pico" viewBox="0 0 24 24" fill="none" stroke="#C9A24B" stroke-width="1.4"><path d="M3 21V8l5-4 5 4 5-4 3 2v15"/><path d="M3 21h18"/></svg>
+        <h4>Estrategia</h4>
+        <p>Leitura do negócio antes do anúncio. O plano vem da realidade do cliente, não de um template.</p>
+      </div>
+      <div class="pillar">
+        <div class="ix">P02</div>
+        <svg class="pico" viewBox="0 0 24 24" fill="none" stroke="#C9A24B" stroke-width="1.4"><path d="M3 17l5-5 4 4 8-9"/><path d="M21 7v5h-5"/></svg>
+        <h4>Trafego</h4>
+        <p>Mídia paga como motor de aquisição. Meta, Google e além, sempre o canal certo para o momento certo.</p>
+      </div>
+      <div class="pillar">
+        <div class="ix">P03</div>
+        <svg class="pico" viewBox="0 0 24 24" fill="none" stroke="#C9A24B" stroke-width="1.4"><path d="M12 2l2.5 7.5H22l-6 4.5 2.5 7.5L12 17l-6.5 4.5L8 14l-6-4.5h7.5z"/></svg>
+        <h4>Coproducao</h4>
+        <p>Pele em jogo. Entra como sócio, divide risco e resultado, responde pelo número final.</p>
+      </div>
+      <div class="pillar">
+        <div class="ix">P04</div>
+        <svg class="pico" viewBox="0 0 24 24" fill="none" stroke="#C9A24B" stroke-width="1.4"><path d="M12 3v18"/><path d="M6 8h12"/></svg>
+        <h4>Proposito</h4>
+        <p>A fé não se anuncia, se nota. Aparece na ética, no cuidado com gente e nos mínimos detalhes, nunca em slogan ou discurso.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TOM DE VOZ ============================ -->
+<section id="voz">
+  <div class="wrap">
+    <div class="kicker">02 &middot; Tom de Voz</div>
+    <h2 class="sec-title">Direto, de campo, caloroso.<br>Sem jargão, sem promessa vazia.</h2>
+    <p class="sec-intro">A voz é de quem já rodou campanha de madrugada e sabe o peso de um número. <strong>Fala claro, evita corporates, admite o irônico</strong> e deixa a fé aparecer no jeito de tratar gente, nunca como palanque.</p>
+
+    <div class="voice-grid">
+      <div class="dim">
+        <div class="dim-top"><span class="l">Formal</span><span class="r">Casual</span></div>
+        <div class="track"><div class="fill" style="width:68%"></div><div class="knob" style="left:68%"></div></div>
+        <div class="scale"><span>protocolar</span><span>conversa de mesa</span></div>
+        <div class="note">Trata por você, fala de gente para gente. <b>Profissional sem ser engessado.</b></div>
+      </div>
+      <div class="dim">
+        <div class="dim-top"><span class="l">Sério</span><span class="r">Divertido</span></div>
+        <div class="track"><div class="fill" style="width:38%"></div><div class="knob" style="left:38%"></div></div>
+        <div class="scale"><span>peso do resultado</span><span>ironia leve</span></div>
+        <div class="note">O dinheiro do cliente é sério. <b>A ironia entra como tempero, nunca como prato.</b></div>
+      </div>
+      <div class="dim">
+        <div class="dim-top"><span class="l">Técnico</span><span class="r">Acessível</span></div>
+        <div class="track"><div class="fill" style="width:72%"></div><div class="knob" style="left:72%"></div></div>
+        <div class="scale"><span>painel de dados</span><span>explica pra qualquer um</span></div>
+        <div class="note">Domina o técnico, mas <b>traduz tudo. O complexo vira claro</b>, esse é o ofício.</div>
+      </div>
+      <div class="dim">
+        <div class="dim-top"><span class="l">Autoritário</span><span class="r">Amigável</span></div>
+        <div class="track"><div class="fill" style="width:60%"></div><div class="knob" style="left:60%"></div></div>
+        <div class="scale"><span>dono da verdade</span><span>parceiro de jornada</span></div>
+        <div class="note">Tem opinião firme e defende com dado. <b>Mas caminha junto, não por cima.</b></div>
+      </div>
+    </div>
+
+    <div class="dodont">
+      <div class="dd do">
+        <h5><span class="badge">&#10003;</span> Fala assim</h5>
+        <ul>
+          <li>Mostra o número antes da opinião
+            <span class="ex">"O CPA caiu 31% em 14 dias. Agora a gente escala com segurança."</span></li>
+          <li>Assume a responsabilidade
+            <span class="ex">"Esse resultado é meu também. Se não vender, eu sinto no bolso."</span></li>
+          <li>Traduz o técnico
+            <span class="ex">"ROAS é quanto cada real investido te devolve. Simples assim."</span></li>
+          <li>Deixa a fé no jeito, não no discurso
+            <span class="ex">"Trabalho como quem planta: cuido do solo e confio no tempo."</span></li>
+        </ul>
+      </div>
+      <div class="dd dont">
+        <h5><span class="badge">&#10005;</span> Não fala assim</h5>
+        <ul>
+          <li>Promessa mágica sem lastro
+            <span class="ex">"Faturamento garantido de 6 dígitos em 30 dias, sem esforço."</span></li>
+          <li>Jargão corporativo vazio
+            <span class="ex">"Vamos sinergizar entregáveis para um mindset disruptivo."</span></li>
+          <li>Tecniquês que afasta o cliente
+            <span class="ex">"Otimizei o ROAS via lookalike 1% com CBO e bid cap."</span></li>
+          <li>Fé imposta ou como gatilho de venda
+            <span class="ex">"Se você tem fé de verdade, vai comprar agora."</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PALETA ============================ -->
+<section id="paleta">
+  <div class="wrap">
+    <div class="kicker">03 &middot; Paleta de Cor</div>
+    <h2 class="sec-title">Onyx para focar.<br>Ouro para valer.</h2>
+    <p class="sec-intro">O fundo escuro não é estética, é <strong>estratégia de atenção</strong>: cria o vazio que faz o ouro virar assinatura. Cada cor tem função, e a hierarquia cromática espelha a hierarquia da mensagem. Ouro = autoridade e dinheiro. Brasa = humanidade e raiz. Azul = dado, raro e calculado.</p>
+
+    <div class="swatches">
+      <div class="swatch">
+        <div class="chip" style="background:#0E0F12"><span class="hex">#0E0F12</span></div>
+        <div class="body"><div class="nm">Onyx</div><div class="role">Base &middot; Fundo</div><div class="why">Quase preto. Premium, foco e silêncio visual. É o palco escuro que faz o ouro brilhar.</div></div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#15171C"><span class="hex">#15171C</span></div>
+        <div class="body"><div class="nm">Grafite</div><div class="role">Superfícies &middot; Cards</div><div class="why">Elevação sutil sobre o onyx. Organiza blocos e cria profundidade sem roubar a cena.</div></div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#C9A24B"><span class="hex" style="color:#0E0F12;background:rgba(255,255,255,.5)">#C9A24B</span></div>
+        <div class="body"><div class="nm">Ouro</div><div class="role">Acento Primário &middot; CTA</div><div class="why">Autoridade, valor e dinheiro. Cor da decisão: títulos, fios, botões e tudo que pede ação.</div></div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#E6C877"><span class="hex" style="color:#0E0F12;background:rgba(255,255,255,.5)">#E6C877</span></div>
+        <div class="body"><div class="nm">Ouro Claro</div><div class="role">Brilho &middot; Gradiente</div><div class="why">O reflexo do golden hour. Dá volume ao ouro em gradientes e destaca subtítulos editoriais.</div></div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#C2643C"><span class="hex">#C2643C</span></div>
+        <div class="body"><div class="nm">Brasa</div><div class="role">Acento Quente Secundário</div><div class="why">Terracota de chão gaúcho. Calor, humanidade e raiz. Entra no gesto humano, nunca como ruído.</div></div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#F2E9D6"><span class="hex" style="color:#0E0F12;background:rgba(255,255,255,.5)">#F2E9D6</span></div>
+        <div class="body"><div class="nm">Creme</div><div class="role">Texto Primário</div><div class="why">Leitura quente sobre o escuro. Mais macio que o branco puro, descansa o olho em textos longos.</div></div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#9A9082"><span class="hex">#9A9082</span></div>
+        <div class="body"><div class="nm">Areia</div><div class="role">Texto Secundário</div><div class="why">Apoio e legendas. Cria a segunda camada de leitura sem competir com o creme.</div></div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#1E2A44"><span class="hex">#1E2A44</span></div>
+        <div class="body"><div class="nm">Azul Profundo</div><div class="role">Terciário &middot; Dados</div><div class="why">Raro e proposital. Aparece só em infográficos e dados, onde calma e precisão importam.</div></div>
+      </div>
+    </div>
+
+    <div class="contrast-tests">
+      <div class="ct dark">
+        <div class="ct-lbl">Teste em fundo escuro (uso padrão)</div>
+        <div class="row"><span class="dot" style="background:#F2E9D6"></span><span class="big cream">Creme sobre Onyx</span><span class="pass">AAA 15.1:1</span></div>
+        <div class="row"><span class="dot" style="background:#C9A24B"></span><span class="big gold">Ouro sobre Onyx</span><span class="pass">AA 8.0:1</span></div>
+        <div class="row"><span class="dot" style="background:#9A9082"></span><span class="smalltxt" style="color:#9A9082">Areia para texto secundário e legendas</span><span class="pass">AA 6.6:1</span></div>
+      </div>
+      <div class="ct light">
+        <div class="ct-lbl">Teste em fundo claro (exceção, sobre creme)</div>
+        <div class="row"><span class="dot" style="background:#0E0F12"></span><span class="big ink">Onyx sobre Creme</span><span class="pass">AAA 14.8:1</span></div>
+        <div class="row"><span class="dot" style="background:#9A7B2E"></span><span class="big gold">Ouro escurecido p/ texto</span><span class="pass">AA 4.7:1</span></div>
+        <div class="row"><span class="dot" style="background:#1E2A44"></span><span class="smalltxt">Azul profundo para títulos no claro</span><span class="pass">AAA 11.6:1</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TIPOGRAFIA ============================ -->
+<section id="tipografia">
+  <div class="wrap">
+    <div class="kicker">04 &middot; Tipografia</div>
+    <h2 class="sec-title">Três vozes tipográficas.<br>Cada uma com um papel.</h2>
+    <p class="sec-intro"><strong>Gloock</strong> traz a serifa de alto contraste para o pensamento e a assinatura. <strong>Inter</strong> garante leitura limpa no corpo e na interface. <strong>JetBrains Mono</strong> é o sinal de dados: números, rótulos técnicos, a marca do tráfego. Cormorant Italic entra só para citações, como respiro editorial.</p>
+
+    <div class="type-row">
+      <div class="type-meta"><div class="role">H1 &middot; Display</div><div class="spec"><b>Gloock</b> Regular<br>48 a 118px &middot; -1px<br>Títulos de capa e seção</div></div>
+      <div class="t-h1">Clareza vende.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><div class="role">H2 &middot; Seção</div><div class="spec"><b>Gloock</b> Regular<br>30 a 52px<br>Aberturas de bloco</div></div>
+      <div class="t-h2">Menos projetos, mais profundidade.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><div class="role">H3 &middot; Impacto</div><div class="spec"><b>Inter</b> Bold 700<br>20 a 24px &middot; +0.2px<br>Títulos curtos e fortes</div></div>
+      <div class="t-h3">MÉTODO GUIADO POR DADOS</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><div class="role">Subtítulo</div><div class="spec"><b>Cormorant</b> Italic<br>18 a 26px<br>Citações e respiros</div></div>
+      <div class="t-sub">a estratégia primeiro, o anúncio depois</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><div class="role">Corpo</div><div class="spec"><b>Inter</b> Regular 400<br>16 a 17px &middot; 1.7 linha<br>Texto corrido, leitura</div></div>
+      <div class="t-body">Tráfego pago é o motor, mas o combustível é a estratégia. Antes de subir campanha, a gente entende o negócio, o público e a oferta. Só depois o orçamento entra em campo.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><div class="role">Small &middot; Rótulo</div><div class="spec"><b>Inter</b> Medium 500<br>13px<br>Legendas e apoio</div></div>
+      <div class="t-small">Apoio, legendas e notas de rodapé em areia sobre escuro.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><div class="role">Mono &middot; Dados</div><div class="spec"><b>JetBrains Mono</b><br>11 a 15px &middot; +1px<br>Números, tags, sinal técnico</div></div>
+      <div class="t-mono">ROAS 4.2x &middot; CPA -31% &middot; +R$25M GERIDOS</div>
+    </div>
+
+    <div class="sig-demo">
+      <span class="star">&#9733; &#9733; &#9733;</span>
+      <div class="sig-name">Fabricio Kaempf</div>
+      <div class="sig-caps">F A B R I C I O&nbsp;&nbsp;K A E M P F</div>
+      <div class="sig-rule"></div>
+      <div class="sig-role">Growth &amp; Performance</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ ELEMENTOS VISUAIS ============================ -->
+<section id="elementos">
+  <div class="wrap">
+    <div class="kicker">05 &middot; Elementos Visuais</div>
+    <h2 class="sec-title">O sistema que se repete<br>e vira reconhecimento.</h2>
+    <p class="sec-intro">Botões, ícones, formas e fotografia obedecem à mesma gramática. O <strong>arco dourado</strong> é o motivo de assinatura. O <strong>fio hairline ouro</strong> organiza. A <strong>estrela</strong> marca presença. A foto carrega golden hour e verdade.</p>
+
+    <div class="elem-grid">
+      <div class="elem-card">
+        <h4>Botões &amp; CTA</h4>
+        <div class="btn-row">
+          <a class="btn btn-primary">Quero escalar <span class="arr">&rarr;</span></a>
+          <a class="btn btn-ghost">Ver método</a>
+          <a class="btn btn-brasa">Falar agora</a>
+        </div>
+        <p class="photo-note"><b>Primário</b> em gradiente de ouro para a ação principal. <b>Ghost</b> com fio ouro para a secundária. <b>Brasa</b> para o convite humano e direto. Cantos de 10px, nunca redondos demais.</p>
+      </div>
+
+      <div class="elem-card">
+        <h4>Ícones &middot; traçado fino dourado</h4>
+        <div class="icon-set">
+          <div class="ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#C9A24B" stroke-width="1.3"><path d="M3 17l5-5 4 4 8-9"/><path d="M21 7v5h-5"/></svg>
+            <div class="ic-lbl">Crescer</div>
+          </div>
+          <div class="ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#C9A24B" stroke-width="1.3"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <div class="ic-lbl">Tempo</div>
+          </div>
+          <div class="ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#C9A24B" stroke-width="1.3"><path d="M12 2l2.5 7.5H22l-6 4.5 2.5 7.5L12 17l-6.5 4.5L8 14l-6-4.5h7.5z"/></svg>
+            <div class="ic-lbl">Meta</div>
+          </div>
+          <div class="ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#C9A24B" stroke-width="1.3"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+            <div class="ic-lbl">Dados</div>
+          </div>
+        </div>
+        <p class="photo-note">Traçado de 1.3px, geométricos e abertos. Linha fina dourada, mesma espessura do fio hairline, para coerência.</p>
+      </div>
+
+      <div class="elem-card">
+        <h4>Formas &amp; Patterns</h4>
+        <div class="shapes">
+          <div class="shape"><div class="sh-box"><div class="ring"></div></div><div class="sh-lbl">Arco / Círculo</div></div>
+          <div class="shape"><div class="sh-box"><svg class="hair" viewBox="0 0 90 90"><line x1="8" y1="45" x2="82" y2="45" stroke="#C9A24B" stroke-width="1"/><circle cx="45" cy="45" r="3" fill="#C9A24B"/></svg></div><div class="sh-lbl">Fio Hairline</div></div>
+          <div class="shape"><div class="sh-box"><span class="starshape">&#9733;</span></div><div class="sh-lbl">Estrela</div></div>
+          <div class="shape"><div class="sh-box"><div class="dotgrid"></div></div><div class="sh-lbl">Grade de pontos</div></div>
+        </div>
+        <p class="photo-note">O <b>arco dourado</b> acompanha o retrato, como no feed. O <b>fio</b> separa sem peso. A <b>estrela</b> marca os destaques. A <b>grade</b> ancora o fundo como textura de dado.</p>
+      </div>
+
+      <div class="elem-card">
+        <h4>Direção Fotográfica</h4>
+        <div class="photo-dir">
+          <div class="pd pd-1"><span class="pd-lbl">Golden hour</span></div>
+          <div class="pd pd-2"><span class="pd-lbl">Fundo escuro</span></div>
+          <div class="pd pd-3"><span class="pd-lbl">Marca / escritório</span></div>
+          <div class="pd pd-4"><span class="pd-lbl">Família &amp; raiz</span></div>
+        </div>
+        <p class="photo-note">Luz quente de fim de tarde, fundos escuros, sombra dramática. Mix de <b>marca polida</b> (blazer, laptop com gráficos) e <b>vida autêntica gaúcha</b> (chimarrão, bandeira do RS, família, ar livre). Momentos de fé só entram quando forem espontâneos e capturados da vida real, nunca encenados como adereço de marca.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ APLICACOES ============================ -->
+<section id="aplicacoes">
+  <div class="wrap">
+    <div class="kicker">06 &middot; Aplicações</div>
+    <h2 class="sec-title">A marca em movimento,<br>do feed ao funil.</h2>
+    <p class="sec-intro">Três aplicações mostram o sistema vivo: o <strong>post editorial</strong> que cruza fé e estratégia, a <strong>capa de destaque</strong> com estrela dourada e a <strong>foto com header de assinatura</strong>. Tudo construído com a mesma paleta e tipografia.</p>
+
+    <div class="mockups">
+      <div>
+        <div class="mock-label">Post de feed</div>
+        <div class="m-feed">
+          <span class="mf-star">&#9733; &#9733; &#9733;</span>
+          <div class="mf-title">Meu pai não sabe <em>o que é</em> ROAS.</div>
+          <div class="mf-sign">FABRICIO KAEMPF &middot; GROWTH</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="mock-label">Capas de destaque</div>
+        <div class="highlights">
+          <div class="hl-circle"><span class="hl-star">&#9733;</span><span class="hl-tx">Método</span></div>
+          <div class="hl-circle"><span class="hl-star">&#9733;</span><span class="hl-tx">Cases</span></div>
+        </div>
+        <div class="hl-circle" style="margin:18px auto 0;"><span class="hl-star">&#9733;</span><span class="hl-tx">Raiz</span></div>
+        <div class="hl-cap">Estrela dourada sobre grafite, fio ouro de contorno</div>
+      </div>
+
+      <div>
+        <div class="mock-label">Foto com header / assinatura</div>
+        <div class="m-photo">
+          <div class="ph-top">
+            <span class="ph-name">FABRICIO KAEMPF</span>
+            <span class="ph-star">&#9733;</span>
+          </div>
+          <div class="ph-bottom">
+            <div class="ph-role">Growth &amp; Performance</div>
+            <div class="ph-handle">@fabriciokaempf</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ NAO FAZER ============================ -->
+<section id="nao-fazer">
+  <div class="wrap">
+    <div class="kicker">07 &middot; Régua do Não Fazer</div>
+    <h2 class="sec-title">O que protege a marca<br>é a disciplina do que ela recusa.</h2>
+    <p class="sec-intro">Coerência se constrói tanto pelo que se faz quanto pelo que se evita. Estes são os <strong>anti-patterns</strong> que descaracterizam o sistema.</p>
+
+    <div class="nope">
+      <div class="nope-item"><span class="x">&#10005;</span><p>Fundo claro como padrão<span>O escuro é a base. Claro só como exceção controlada, nunca a regra do feed.</span></p></div>
+      <div class="nope-item"><span class="x">&#10005;</span><p>Ouro espalhado por tudo<span>O ouro vale porque é raro. Usado em excesso, vira dourado barato e perde a autoridade.</span></p></div>
+      <div class="nope-item"><span class="x">&#10005;</span><p>Mais de três fontes no núcleo<span>Gloock, Inter e Mono. Cormorant só para citação. Nada além disso quebra o sistema.</span></p></div>
+      <div class="nope-item"><span class="x">&#10005;</span><p>Travessão em qualquer texto<span>Regra inegociável. Use vírgula, ponto, dois pontos ou parênteses no lugar.</span></p></div>
+      <div class="nope-item"><span class="x">&#10005;</span><p>Jargão corporativo e promessa mágica<span>Nada de sinergia, disrupção ou faturamento garantido. A voz é de campo, com lastro.</span></p></div>
+      <div class="nope-item"><span class="x">&#10005;</span><p>Fé como slogan, âncora ou gatilho de venda<span>A fé não ancora headline, assinatura nem CTA. Ela aparece no caráter e nos mínimos detalhes, nunca como argumento de conversão.</span></p></div>
+      <div class="nope-item"><span class="x">&#10005;</span><p>Foto fria, estoque genérico ou flat design<span>Sem luz neutra de escritório de banco de imagem. A luz é quente, a cena é verdadeira.</span></p></div>
+      <div class="nope-item"><span class="x">&#10005;</span><p>Azul fora dos dados<span>Azul profundo só em infográfico. Como cor de marca ampla, rouba o lugar do ouro.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ RODAPE ============================ -->
+<footer>
+  <span class="star">&#9733; &#9733; &#9733;</span>
+  <div class="fname">Fabricio Kaempf</div>
+  <div class="ftag">GROWTH &amp; PERFORMANCE</div>
+  <div class="fmeta">
+    Brandbook &middot; Sistema de identidade visual &middot; 2026<br>
+    Santo Cristo, RS &middot; Itajaí, SC &middot; @fabriciokaempf
+  </div>
+</footer>
+
+</body>
+</html>

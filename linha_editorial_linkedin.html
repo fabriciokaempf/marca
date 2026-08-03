@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Linha Editorial LinkedIn | Fabricio Kaempf</title>
+<style>
+/* ============================================================
+   LINHA EDITORIAL LINKEDIN 2026
+   Fabricio Kaempf. Mesma identidade do brandbook: onyx, ouro, creme.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Gloock&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&display=swap');
+
+:root{
+  --onyx:       #0E0F12;
+  --grafite:    #15171C;
+  --grafite-2:  #1B1E25;
+  --ouro:       #C9A24B;
+  --ouro-claro: #E6C877;
+  --brasa:      #C2643C;
+  --creme:      #F2E9D6;
+  --areia:      #9A9082;
+  --azul:       #1E2A44;
+  --linha:      rgba(201,162,75,0.22);
+  --linha-suave:rgba(242,233,214,0.10);
+  --sans: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+  --serif:'Gloock', Georgia, serif;
+  --mono: 'JetBrains Mono', Consolas, monospace;
+  --quote:'Cormorant Garamond', Georgia, serif;
+  --maxw: 1020px;
+}
+
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{
+  background:
+    radial-gradient(1100px 650px at 80% -6%, rgba(201,162,75,0.10), transparent 60%),
+    radial-gradient(850px 550px at 6% 14%, rgba(194,100,60,0.06), transparent 55%),
+    var(--onyx);
+  color:var(--creme);
+  font-family:var(--sans);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+
+.wrap{ max-width:var(--maxw); margin:0 auto; padding:0 28px; }
+section{ padding:92px 0; border-bottom:1px solid var(--linha-suave); }
+section:last-of-type{ border-bottom:none; }
+
+.kicker{
+  font-family:var(--mono); font-size:12px; letter-spacing:3.5px;
+  text-transform:uppercase; color:var(--ouro);
+  display:flex; align-items:center; gap:14px; margin-bottom:20px;
+}
+.kicker::before{ content:""; width:34px; height:1px; background:var(--ouro); }
+
+h2.sec-title{
+  font-family:var(--serif); font-weight:400;
+  font-size:clamp(28px,4.2vw,48px); line-height:1.08;
+  color:var(--creme); letter-spacing:-0.5px; margin-bottom:16px;
+}
+.sec-intro{
+  max-width:660px; color:var(--areia); font-size:16.5px;
+  line-height:1.75; margin-bottom:48px;
+}
+.sec-intro strong{ color:var(--creme); font-weight:500; }
+.gold-t{ color:var(--ouro-claro); }
+
+/* ============ CAPA ============ */
+.cover{
+  min-height:88vh; display:flex; flex-direction:column;
+  justify-content:center; position:relative; overflow:hidden;
+  border-bottom:1px solid var(--linha); padding:90px 0 60px;
+}
+.cover .arc{
+  position:absolute; right:-240px; top:50%; transform:translateY(-50%);
+  width:680px; height:680px; border-radius:50%;
+  border:1.5px solid var(--linha);
+  box-shadow:inset 0 0 110px rgba(201,162,75,0.10);
+  pointer-events:none;
+}
+.cover .arc::after{
+  content:""; position:absolute; inset:80px; border-radius:50%;
+  border:1px solid rgba(201,162,75,0.12);
+}
+.cover-inner{ position:relative; z-index:2; }
+.cover .star{ color:var(--ouro); font-size:18px; letter-spacing:6px; display:block; margin-bottom:26px; }
+.cover .pre{
+  font-family:var(--mono); font-size:13px; letter-spacing:5px;
+  text-transform:uppercase; color:var(--areia); margin-bottom:24px;
+}
+.cover h1{
+  font-family:var(--serif); font-weight:400;
+  font-size:clamp(40px,7.5vw,92px); line-height:0.98;
+  letter-spacing:-1px; color:var(--creme); margin-bottom:22px;
+}
+.cover h1 .gold{
+  background:linear-gradient(96deg,var(--ouro-claro),var(--ouro) 55%,var(--brasa));
+  -webkit-background-clip:text; background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.cover .lema{
+  font-family:var(--quote); font-style:italic;
+  font-size:clamp(20px,3vw,30px); color:var(--ouro-claro); margin-bottom:26px;
+}
+.cover .tagline{ max-width:560px; font-size:17px; color:var(--areia); }
+.cover .tagline b{ color:var(--creme); font-weight:500; }
+.cover .meta{
+  margin-top:48px; display:flex; flex-wrap:wrap; gap:28px 52px;
+  font-family:var(--mono); font-size:11.5px; letter-spacing:2px;
+  text-transform:uppercase; color:var(--areia);
+}
+.cover .meta b{ color:var(--ouro); font-weight:500; }
+
+/* ============ O JOGO (regras) ============ */
+.rules{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.rule{
+  background:linear-gradient(180deg,var(--grafite-2),var(--grafite));
+  border:1px solid var(--linha-suave); border-radius:14px;
+  padding:26px 28px; position:relative; overflow:hidden;
+}
+.rule::before{
+  content:""; position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg,var(--ouro),transparent);
+}
+.rule .ix{ font-family:var(--mono); font-size:12px; color:var(--ouro); letter-spacing:2px; margin-bottom:12px; }
+.rule h4{ font-family:var(--serif); font-weight:400; font-size:20px; color:var(--creme); margin-bottom:8px; }
+.rule p{ font-size:14px; color:var(--areia); line-height:1.6; }
+.rule p b{ color:var(--ouro-claro); font-weight:500; }
+
+/* ============ VOZ ============ */
+.voice-box{
+  background:var(--grafite); border:1px solid var(--linha);
+  border-radius:16px; padding:40px 44px; margin-bottom:28px;
+}
+.voice-box .vq{
+  font-family:var(--quote); font-style:italic; font-size:24px;
+  line-height:1.5; color:var(--creme); margin-bottom:18px;
+}
+.voice-box .vq .hl{ color:var(--ouro-claro); font-style:normal; }
+.voice-box p{ color:var(--areia); font-size:15.5px; }
+.voice-box p b{ color:var(--creme); font-weight:500; }
+
+/* ============ PILARES ============ */
+.pilares{ display:flex; flex-direction:column; gap:18px; }
+.pilar{
+  display:grid; grid-template-columns:130px 1fr 210px; gap:26px;
+  background:var(--grafite); border:1px solid var(--linha-suave);
+  border-radius:14px; padding:28px 30px; align-items:start;
+}
+.pilar .p-ix{ font-family:var(--mono); font-size:12px; color:var(--ouro); letter-spacing:2px; }
+.pilar .p-ix .pct{
+  display:block; font-family:var(--serif); font-size:34px;
+  color:var(--creme); margin-top:8px; letter-spacing:0;
+}
+.pilar h4{ font-family:var(--serif); font-weight:400; font-size:22px; color:var(--creme); margin-bottom:8px; }
+.pilar .p-desc{ font-size:14.5px; color:var(--areia); line-height:1.65; }
+.pilar .p-desc b{ color:var(--creme); font-weight:500; }
+.pilar .p-ex{
+  font-size:13px; color:var(--areia); border-left:2px solid var(--linha);
+  padding-left:16px; line-height:1.7;
+}
+.pilar .p-ex .lbl{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--ouro); display:block; margin-bottom:8px;
+}
+
+/* ============ SEMANA MODELO ============ */
+.week{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-bottom:28px; }
+.day{
+  background:linear-gradient(180deg,var(--grafite-2),var(--grafite));
+  border:1px solid var(--linha-suave); border-radius:14px; padding:26px;
+}
+.day .d-nome{
+  font-family:var(--mono); font-size:12px; letter-spacing:2px;
+  text-transform:uppercase; color:var(--ouro); margin-bottom:6px;
+}
+.day .d-hora{ font-family:var(--mono); font-size:11px; color:var(--areia); letter-spacing:1px; margin-bottom:14px; }
+.day h4{ font-family:var(--serif); font-weight:400; font-size:19px; color:var(--creme); margin-bottom:8px; }
+.day p{ font-size:13.5px; color:var(--areia); line-height:1.6; }
+.formats{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.fmt{
+  border:1px solid var(--linha-suave); border-radius:12px;
+  padding:20px 24px; background:var(--grafite);
+  display:flex; gap:16px; align-items:baseline;
+}
+.fmt .f-tag{
+  font-family:var(--mono); font-size:11px; color:var(--ouro);
+  letter-spacing:1.5px; text-transform:uppercase; white-space:nowrap;
+}
+.fmt p{ font-size:13.5px; color:var(--areia); }
+.fmt p b{ color:var(--creme); font-weight:500; }
+
+/* ============ HOOKS ============ */
+.hooks{ display:flex; flex-direction:column; gap:0; }
+.hook{
+  display:grid; grid-template-columns:56px 1fr 150px; gap:20px;
+  padding:18px 6px; border-bottom:1px solid var(--linha-suave);
+  align-items:baseline;
+}
+.hook:last-child{ border-bottom:none; }
+.hook .h-n{ font-family:var(--mono); font-size:12px; color:var(--ouro); letter-spacing:1px; }
+.hook .h-t{ font-family:var(--serif); font-size:19px; color:var(--creme); line-height:1.35; }
+.hook .h-p{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--areia); text-align:right;
+}
+
+/* ============ RITUAL ============ */
+.ritual-grid{ display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+.rt{
+  border-radius:14px; padding:30px 32px; border:1px solid var(--linha-suave);
+}
+.rt.gold{ background:linear-gradient(180deg,rgba(201,162,75,0.10),var(--grafite)); border-color:var(--linha); }
+.rt.plain{ background:var(--grafite); }
+.rt h5{
+  font-family:var(--mono); font-size:13px; letter-spacing:2px;
+  text-transform:uppercase; margin-bottom:18px; color:var(--ouro);
+}
+.rt.plain h5{ color:var(--brasa); }
+.rt ul{ list-style:none; }
+.rt li{
+  font-size:14.5px; color:var(--creme); padding:10px 0 10px 26px;
+  border-bottom:1px solid var(--linha-suave); position:relative; line-height:1.55;
+}
+.rt li:last-child{ border-bottom:none; }
+.rt.gold li::before{ content:"\2713"; position:absolute; left:0; color:var(--ouro); font-weight:700; }
+.rt.plain li::before{ content:"\2715"; position:absolute; left:0; color:var(--brasa); font-weight:700; }
+.rt li span{ display:block; font-size:12.5px; color:var(--areia); margin-top:3px; }
+
+/* ============ METRICAS ============ */
+.metricas{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-bottom:34px; }
+.met{
+  background:var(--grafite); border:1px solid var(--linha-suave);
+  border-radius:14px; padding:24px; text-align:center;
+}
+.met .m-num{ font-family:var(--serif); font-size:32px; color:var(--ouro); line-height:1.1; }
+.met .m-lbl{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--areia); margin-top:10px; line-height:1.6;
+}
+.met-note{ font-size:14px; color:var(--areia); max-width:640px; line-height:1.7; }
+.met-note b{ color:var(--creme); font-weight:500; }
+
+footer{ text-align:center; padding:64px 28px 84px; color:var(--areia); }
+footer .star{ color:var(--ouro); letter-spacing:6px; font-size:14px; display:block; margin-bottom:16px; }
+footer .fname{ font-family:var(--serif); font-size:24px; color:var(--creme); margin-bottom:6px; }
+footer .ftag{ font-family:var(--mono); font-size:11px; letter-spacing:3px; text-transform:uppercase; }
+footer .fmeta{ font-size:13px; margin-top:20px; line-height:1.7; }
+
+@media (max-width:880px){
+  .rules{ grid-template-columns:1fr; }
+  .pilar{ grid-template-columns:1fr; gap:14px; }
+  .pilar .p-ex{ border-left:none; border-top:1px solid var(--linha-suave); padding:14px 0 0; }
+  .week{ grid-template-columns:1fr; }
+  .formats{ grid-template-columns:1fr; }
+  .ritual-grid{ grid-template-columns:1fr; }
+  .metricas{ grid-template-columns:1fr 1fr; }
+  .hook{ grid-template-columns:44px 1fr; }
+  .hook .h-p{ display:none; }
+  .cover .arc{ opacity:.5; }
+}
+@media (max-width:540px){
+  section{ padding:68px 0; }
+  .metricas{ grid-template-columns:1fr; }
+  .voice-box{ padding:30px 26px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================ CAPA ============================ -->
+<header class="cover">
+  <div class="arc"></div>
+  <div class="wrap cover-inner">
+    <span class="star">&#9733; &#9733; &#9733;</span>
+    <div class="pre">Linha Editorial &middot; LinkedIn &middot; Modo Vitrine</div>
+    <h1>Encontrável<br><span class="gold">e respeitável.</span></h1>
+    <div class="lema">Presença firme, esforço proporcional.</div>
+    <p class="tagline">
+      O manual do LinkedIn de <b>Fabricio Kaempf</b> no modo vitrine. Aqui o canal é secundário e
+      consciente: um cartão de visitas vivo, feito pra confirmar autoridade quando alguém importante
+      te procura, não pra caçar seguidor. O jogo é ser encontrado forte, não postar muito.
+    </p>
+    <div class="meta">
+      <span><b>1 post</b> por semana</span>
+      <span><b>Perfil</b> sempre pronto</span>
+      <span><b>45 min</b> de plantão</span>
+      <span><b>Zero</b> cheiro de IA</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ 01 O JOGO ============================ -->
+<section id="jogo">
+  <div class="wrap">
+    <div class="kicker">01 &middot; O Papel do Canal</div>
+    <h2 class="sec-title">Vitrine, não prioridade.<br>Presença, não perseguição.</h2>
+    <p class="sec-intro">O combinado antes de tudo: aqui não se caça alcance, se mantém presença. Este perfil trabalha calado, pra quando um empresário, um par ou um indicado te procurar e encontrar autoridade confirmada. As oito regras abaixo são <strong>contexto pra não errar bobo</strong>, não meta pra perseguir. E a mais importante: em 2026 o LinkedIn virou <strong>rede de interesse</strong>, entrega pra quem se importa com o tema, não pra quem te conhece. Autoridade de assunto vence tamanho de audiência.</p>
+
+    <div class="rules">
+      <div class="rule">
+        <div class="ix">R01</div>
+        <h4>Dwell time é o rei</h4>
+        <p>O algoritmo mede quanto tempo a pessoa fica lendo. Post que segura <b>61 segundos ou mais engaja 13x</b> mais que post escaneado em 3. Escreve pra prender, não pra ser passado.</p>
+      </div>
+      <div class="rule">
+        <div class="ix">R02</div>
+        <h4>Golden hour define o destino</h4>
+        <p>Os primeiros <b>60 a 90 minutos decidem cerca de 70% do alcance</b>. Responder cada comentário nessa janela aumenta a visibilidade em até 35%.</p>
+      </div>
+      <div class="rule">
+        <div class="ix">R03</div>
+        <h4>Comentário vale 15x o like</h4>
+        <p>E comentário com <b>15+ palavras</b> pesa ainda mais. O CTA certo não pede aplauso, pede história: quem conta história escreve comprido.</p>
+      </div>
+      <div class="rule">
+        <div class="ix">R04</div>
+        <h4>Os 210 caracteres sagrados</h4>
+        <p>O feed corta o post no "ver mais". <b>O hook precisa vencer sozinho</b> nesse espaço: tensão, curiosidade ou confissão. Sem aquecimento.</p>
+      </div>
+      <div class="rule">
+        <div class="ix">R05</div>
+        <h4>Link no corpo mata o post</h4>
+        <p>Derruba o alcance em torno de <b>19%</b>. Link vai sempre no primeiro comentário. Sem exceção.</p>
+      </div>
+      <div class="rule">
+        <div class="ix">R06</div>
+        <h4>Documento PDF é o formato rei</h4>
+        <p>Carrossel em PDF entrega a <b>maior taxa de engajamento da plataforma</b> (na casa de 6,6%). Texto puro constrói voz; o mix dos dois constrói marca.</p>
+      </div>
+      <div class="rule">
+        <div class="ix">R07</div>
+        <h4>IA genérica é punida</h4>
+        <p>Conteúdo com digital própria engaja perto de <b>3,6x mais</b> que texto de template. O algoritmo (e o leitor) reconhecem a voz de robô.</p>
+      </div>
+      <div class="rule">
+        <div class="ix">R08</div>
+        <h4>Cadência com respiro</h4>
+        <p>Postar demais canibaliza o próprio alcance. Pra vitrine, <b>1 post por semana já sustenta</b>. Hashtag pesa quase nada: zero é o padrão.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 02 VOZ ============================ -->
+<section id="voz">
+  <div class="wrap">
+    <div class="kicker">02 &middot; Missão &amp; Voz</div>
+    <h2 class="sec-title">Cena, campo e fé.<br>Nessa ordem, sempre.</h2>
+    <p class="sec-intro">A missão é clara: <strong>virar referência em estratégia e tráfego sem nunca esconder de quem se é</strong>. A fé não vira slogan, headline nem âncora de marketing: ela aparece onde sempre apareceu, nos mínimos detalhes. A voz é a do brandbook: direto, de campo, caloroso, sem jargão e sem promessa vazia.</p>
+
+    <div class="voice-box">
+      <p class="vq">"Eu fui coroinha em Santo Cristo servindo talvez pelos motivos errados. O encontro de verdade com Jesus veio depois, já adulto. <span class="hl">É essa história que eu conto, porque é a verdadeira.</span>"</p>
+      <p><b>A fé nunca aparece como doutrina, aparece como vida:</b> a decisão ética que custou dinheiro, a paz no lançamento que quebrou, a cadeira puxada quando ninguém tá olhando. Foi assim num almoço high ticket em Brasília, na orla do Lago Paranoá: um empresário fechou negócio por causa de um gesto que ninguém deveria ter visto. Quem prega afasta. Quem vive atrai.</p>
+    </div>
+
+    <div class="voice-box">
+      <p class="vq">"Humano escreve cena. <span class="hl">IA escreve tese.</span>"</p>
+      <p>Todo post nasce de um lugar concreto: o chimarrão da tarde, a planilha aberta às 23h, a ligação do cliente apurado. <b>Detalhe regional é impossível de sintetizar:</b> guri, bah, mate lavado, os 700 km de estrada. É a digital que nenhum template copia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 03 PILARES ============================ -->
+<section id="pilares">
+  <div class="wrap">
+    <div class="kicker">03 &middot; Pilares de Conteúdo</div>
+    <h2 class="sec-title">Cinco pilares.<br>A cena na frente.</h2>
+    <p class="sec-intro">Os pesos são a <strong>prioridade relativa</strong> de cada pilar no rodízio semanal, não fatia de um mês cheio. A cena lidera de propósito: foi o que mais distribuiu nos primeiros posts (a cadeira bateu recorde, a tese técnica seca foi o pior). Menos tese, mais história. O algoritmo premia consistência: esses assuntos, e só eles.</p>
+
+    <div class="pilares">
+      <div class="pilar">
+        <div class="p-ix">P01<span class="pct">30%</span></div>
+        <div>
+          <h4>Cena &amp; Campo</h4>
+          <p class="p-desc">A história real que vira lição de estratégia. Abre no meio da cena (interior, estrada, família) e fecha com a verdade de tráfego que ela ensina. <b>É o pilar que humaniza e viraliza.</b></p>
+        </div>
+        <div class="p-ex"><span class="lbl">Exemplos</span>"Meu pai não sabe o que é ROAS" &middot; A viagem de 700 km &middot; O que o interior ensina sobre paciência e colheita</div>
+      </div>
+
+      <div class="pilar">
+        <div class="p-ix">P02<span class="pct">25%</span></div>
+        <div>
+          <h4>Autoridade Técnica</h4>
+          <p class="p-desc">O estrategista sênior traduzindo o complexo: Andrômeda, ROAS incremental versus reportado, atribuição, Consent Mode, custo de mídia subindo. <b>Dado real, opinião com lastro, zero tecniquês vazio.</b></p>
+        </div>
+        <div class="p-ex"><span class="lbl">Exemplos</span>"O criativo agora escolhe a audiência" &middot; "ROAS reportado é opinião" &middot; Por que consolidar budget vence</div>
+      </div>
+
+      <div class="pilar">
+        <div class="p-ix">P03<span class="pct">20%</span></div>
+        <div>
+          <h4>Fé &amp; Trabalho</h4>
+          <p class="p-desc">O testemunho aplicado ao ofício: ética quando ninguém vê, descanso em quem sustenta, caráter acima de conversão. <b>Curto e pessoal</b>, cai bem no fim de semana, quando o feed está calmo e o coração aberto.</p>
+        </div>
+        <div class="p-ex"><span class="lbl">Exemplos</span>De coroinha a estrategista &middot; A cadeira que fechou um contrato em Brasília &middot; O cliente que recusei e por quê</div>
+      </div>
+
+      <div class="pilar">
+        <div class="p-ix">P04<span class="pct">15%</span></div>
+        <div>
+          <h4>Bastidor &amp; Opinião</h4>
+          <p class="p-desc">O que acontece dentro dos lançamentos e coproduções (sem quebrar sigilo) e as opiniões que o mercado evita dar. <b>Posicionamento firme defendido com número.</b></p>
+        </div>
+        <div class="p-ex"><span class="lbl">Exemplos</span>"Perdi um cliente e foi lucro" &middot; O bastidor de um seis dígitos &middot; O que a gringa faz que o Brasil ignora</div>
+      </div>
+
+      <div class="pilar">
+        <div class="p-ix">P05<span class="pct">10%</span></div>
+        <div>
+          <h4>Isca de Valor</h4>
+          <p class="p-desc">Uma vez por mês, no máximo: entregável real (planilha, checklist, framework) com CTA de comentário que leva pra DM. <b>Gera lead qualificado e conversa privada.</b></p>
+        </div>
+        <div class="p-ex"><span class="lbl">Exemplos</span>"Comenta PLANILHA que te mando a calculadora de CPA alvo" &middot; Checklist de diagnóstico de funil</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 04 CADENCIA ============================ -->
+<section id="cadencia">
+  <div class="wrap">
+    <div class="kicker">04 &middot; Cadência &amp; Formatos</div>
+    <h2 class="sec-title">Um post por semana.<br>O resto é silêncio, de propósito.</h2>
+    <p class="sec-intro">Vitrine não pede volume, pede regularidade. <strong>Um post por semana, terça de manhã.</strong> Melhor janela no Brasil: início da manhã em dia útil (7h às 9h), quando o profissional abre o feed com o café. Fim de semana é bônus, não obrigação.</p>
+
+    <div class="week">
+      <div class="day">
+        <div class="d-nome">O dia</div>
+        <div class="d-hora">Terça &middot; 07h30</div>
+        <h4>Um, e só um</h4>
+        <p>Um post por semana, sempre no mesmo horário. Rascunho pronto na segunda à noite, revisão de 15 minutos, agenda.</p>
+      </div>
+      <div class="day">
+        <div class="d-nome">A janela</div>
+        <div class="d-hora">07h &middot; 09h</div>
+        <h4>Café na mão</h4>
+        <p>Manhã de dia útil é quando o profissional abre o feed. Postar sexta à noite (o erro do post 1) queima o alcance.</p>
+      </div>
+      <div class="day">
+        <div class="d-nome">O rodízio</div>
+        <div class="d-hora">4 semanas</div>
+        <h4>Gira os pilares</h4>
+        <p>Cena, técnico, pessoal, opinião. A cena com peso extra, porque é a que distribui. Isca de valor só quando fizer sentido.</p>
+      </div>
+    </div>
+
+    <div class="formats">
+      <div class="fmt"><span class="f-tag">Texto puro</span><p><b>O padrão.</b> 900 a 1.400 caracteres, parágrafos de 1 a 3 linhas, muito espaço em branco. É o formato do dia a dia.</p></div>
+      <div class="fmt"><span class="f-tag">Foto + texto</span><p><b>Conexão.</b> Foto real (chimarrão, estrada, família, golden hour) com legenda de cena. Sem banco de imagem, nunca.</p></div>
+      <div class="fmt"><span class="f-tag">Carrossel PDF</span><p><b>Opcional.</b> Rende engajamento, mas dá trabalho. Só quando quiser, na identidade onyx + ouro do brandbook.</p></div>
+      <div class="fmt"><span class="f-tag">Isca / DM</span><p><b>Raro.</b> Entregável real com palavra-chave. É jogada de crescimento, não de vitrine. Guarda pro apêndice.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 05 HOOKS ============================ -->
+<section id="hooks">
+  <div class="wrap">
+    <div class="kicker">05 &middot; Banco de Hooks</div>
+    <h2 class="sec-title">A primeira linha<br>compra as outras trinta.</h2>
+    <p class="sec-intro">Todos abaixo de 210 caracteres, todos no tom da casa. <strong>Um hook por post, riscado da lista depois de usado.</strong></p>
+
+    <div class="hooks">
+      <div class="hook"><span class="h-n">H01</span><span class="h-t">Meu pai não sabe o que é ROAS.</span><span class="h-p">P01 &middot; usado</span></div>
+      <div class="hook"><span class="h-n">H02</span><span class="h-t">O criativo não tá caro. Tua oferta que tá fraca.</span><span class="h-p">P02</span></div>
+      <div class="hook"><span class="h-n">H03</span><span class="h-t">Perdi um cliente essa semana. Foi a decisão mais lucrativa do mês.</span><span class="h-p">P04</span></div>
+      <div class="hook"><span class="h-n">H04</span><span class="h-t">Fui coroinha por anos. Servia pelos motivos errados.</span><span class="h-p">P03</span></div>
+      <div class="hook"><span class="h-n">H05</span><span class="h-t">ROAS reportado é opinião. ROAS incremental é fato.</span><span class="h-p">P02</span></div>
+      <div class="hook"><span class="h-n">H06</span><span class="h-t">Todo mundo quer o print do faturamento. Ninguém quer o print do custo.</span><span class="h-p">P04</span></div>
+      <div class="hook"><span class="h-n">H07</span><span class="h-t">Cliente me pediu resultado pra ontem. Devolvi a pergunta: plantou quando?</span><span class="h-p">P01</span></div>
+      <div class="hook"><span class="h-n">H08</span><span class="h-t">O contrato não fechou pelo meu ROAS. Fechou por uma cadeira.</span><span class="h-p">P03 &middot; usado</span></div>
+      <div class="hook"><span class="h-n">H09</span><span class="h-t">Escalar campanha ruim só faz ela quebrar mais rápido.</span><span class="h-p">P02</span></div>
+      <div class="hook"><span class="h-n">H10</span><span class="h-t">Chimarrão ensina o que o tráfego cobra: paciência tem preço, pressa tem juros.</span><span class="h-p">P01</span></div>
+      <div class="hook"><span class="h-n">H11</span><span class="h-t">A gringa me pagou pra descobrir o que o Brasil ainda ignora.</span><span class="h-p">P04</span></div>
+      <div class="hook"><span class="h-n">H12</span><span class="h-t">Rodei mais de R$25 milhões em mídia. O erro mais caro custou R$ 300.</span><span class="h-p">P02</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 06 RITUAL ============================ -->
+<section id="ritual">
+  <div class="wrap">
+    <div class="kicker">06 &middot; Ritual de Publicação</div>
+    <h2 class="sec-title">O que se faz sempre.<br>O que não se faz nunca.</h2>
+    <p class="sec-intro">Publicar é metade do jogo. A outra metade acontece nos <strong>45 a 60 minutos seguintes</strong> e nas regras que protegem a voz.</p>
+
+    <div class="ritual-grid">
+      <div class="rt gold">
+        <h5>Checklist de todo post</h5>
+        <ul>
+          <li>Hook vence sozinho nos 210 caracteres<span>Teste: leria sem contexto?</span></li>
+          <li>Leitura em voz alta antes de publicar<span>Se travar na língua, reescreve. Acentuação completa, zero travessão.</span></li>
+          <li>Link só no primeiro comentário<span>Nunca no corpo. Nunca.</span></li>
+          <li>45 a 60 minutos de plantão após publicar<span>Cada comentário respondido com pergunta de volta.</span></li>
+          <li>CTA que coleciona histórias<span>Pergunta que só se responde com 15+ palavras.</span></li>
+          <li>Um detalhe que só o Fabricio saberia<span>Cheiro, lugar, frase torta do interior. A prova de humanidade.</span></li>
+        </ul>
+      </div>
+      <div class="rt plain">
+        <h5>Nunca, em nenhum post</h5>
+        <ul>
+          <li>Staccato de frase de efeito empilhada<span>O ritmo metralhadora é a assinatura da IA.</span></li>
+          <li>Lista com paralelismo perfeito<span>Três itens bonitinhos demais denunciam o template.</span></li>
+          <li>Hashtag<span>Peso quase nulo em 2026 e grito de amadorismo.</span></li>
+          <li>Começar com "No mundo digital de hoje"<span>Ou qualquer tese genérica. Post começa em cena.</span></li>
+          <li>Fé como slogan, âncora ou gatilho<span>O nome de Jesus não ancora headline, assinatura nem CTA. A fé aparece no gesto, como a cadeira puxada sem plateia.</span></li>
+          <li>História inventada apresentada como real<span>Verdade editada é forte. Ficção descoberta quebra tudo.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 07 METRICAS ============================ -->
+<section id="metricas">
+  <div class="wrap">
+    <div class="kicker">07 &middot; Resultados &amp; Aprendizados</div>
+    <h2 class="sec-title">O que os primeiros<br>posts já ensinaram.</h2>
+    <p class="sec-intro">Primeira quinzena de julho de 2026, cinco posts, partindo de uma conta dormente. <strong>Numa vitrine, impressão não é meta, é termômetro.</strong> O que importa é a qualidade de quem vê e o perfil confirmar autoridade quando alguém te checa.</p>
+
+    <div class="metricas">
+      <div class="met"><div class="m-num">507</div><div class="m-lbl">Recorde de alcance, no post da cadeira</div></div>
+      <div class="met"><div class="m-num">0 &rarr; 16</div><div class="m-lbl">Aparições em busca por semana, após a headline nova</div></div>
+      <div class="met"><div class="m-num">~40%</div><div class="m-lbl">Da audiência é sênior, diretor ou C-level</div></div>
+      <div class="met"><div class="m-num">1</div><div class="m-lbl">Par qualificado veio na DM, efeito da rede</div></div>
+    </div>
+
+    <p class="met-note"><b>Os três aprendizados que os números provaram:</b> primeiro, <b>história distribui, tese seca não</b> (a cadeira alcançou 507, o post técnico do ROAS foi o pior). Segundo, <b>janela importa</b> (postar de manhã dobrou o alcance versus sexta à noite). Terceiro, <b>o gargalo é relacionamento, não conteúdo</b>: alcance já existe, comentário só vem de rede aquecida, e aquecer rede diariamente é o único esforço que a vitrine talvez não valha a pena pagar. Os sinais que importam de verdade: aparecer em busca, a qualidade de quem vê e uma conexão de par por mês. Reação e impressão são termômetro, não placar.</p>
+  </div>
+</section>
+
+<!-- ============================ APENDICE ============================ -->
+<section id="apendice">
+  <div class="wrap">
+    <div class="kicker">Apêndice &middot; Modo Crescimento</div>
+    <h2 class="sec-title">Se um dia o canal<br>virar prioridade.</h2>
+    <p class="sec-intro">Tudo acima é modo vitrine, calibrado pro peso que o LinkedIn tem hoje na tua vida. Se em algum momento tu decidir transformar o canal em máquina de audiência e lead, o jogo muda de intensidade. O plano de crescimento fica guardado aqui, pronto pra ligar.</p>
+
+    <div class="rules">
+      <div class="rule">
+        <div class="ix">C01</div>
+        <h4>Cadência</h4>
+        <p>De 1 para <b>3 a 4 posts por semana</b>, com 12 a 18 horas entre eles. Terça e quinta de manhã, domingo à noite.</p>
+      </div>
+      <div class="rule">
+        <div class="ix">C02</div>
+        <h4>Aquecimento diário</h4>
+        <p><b>5 comentários por dia</b> em posts do nicho, antes de pedir qualquer coisa. É o que destrava o comentário público que a vitrine não persegue.</p>
+      </div>
+      <div class="rule">
+        <div class="ix">C03</div>
+        <h4>Formatos de pico</h4>
+        <p>Carrossel PDF quinzenal e isca de valor mensal (entregável real, comentário que leva pra DM). Volume de conteúdo.</p>
+      </div>
+      <div class="rule">
+        <div class="ix">C04</div>
+        <h4>Metas de 90 dias</h4>
+        <p>3x impressões, 10+ comentários longos por post, 20 DMs qualificadas, 3 conversas de proposta. Medição quinzenal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="star">&#9733; &#9733; &#9733;</span>
+  <div class="fname">Fabricio Kaempf</div>
+  <div class="ftag">GROWTH &amp; PERFORMANCE</div>
+  <div class="fmeta">
+    Linha Editorial LinkedIn &middot; Modo Vitrine &middot; julho de 2026<br>
+    Santo Cristo, RS &middot; Itajaí, SC &middot; @fabriciokaempf
+  </div>
+</footer>
+
+</body>
+</html>

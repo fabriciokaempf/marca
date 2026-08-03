@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Linha Editorial Threads | Fabricio Kaempf</title>
+<style>
+/* ============================================================
+   LINHA EDITORIAL THREADS, FABRICIO KAEMPF
+   Canal de relacionamento. Mesma identidade: onyx, ouro, creme.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Gloock&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&display=swap');
+
+:root{
+  --onyx:       #0E0F12;
+  --grafite:    #15171C;
+  --grafite-2:  #1B1E25;
+  --ouro:       #C9A24B;
+  --ouro-claro: #E6C877;
+  --brasa:      #C2643C;
+  --creme:      #F2E9D6;
+  --areia:      #9A9082;
+  --azul:       #1E2A44;
+  --linha:      rgba(201,162,75,0.22);
+  --linha-suave:rgba(242,233,214,0.10);
+  --sans: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+  --serif:'Gloock', Georgia, serif;
+  --mono: 'JetBrains Mono', Consolas, monospace;
+  --quote:'Cormorant Garamond', Georgia, serif;
+  --maxw: 1020px;
+}
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{
+  background:
+    radial-gradient(1100px 650px at 80% -6%, rgba(201,162,75,0.10), transparent 60%),
+    radial-gradient(850px 550px at 6% 14%, rgba(194,100,60,0.06), transparent 55%),
+    var(--onyx);
+  color:var(--creme); font-family:var(--sans); line-height:1.65; -webkit-font-smoothing:antialiased;
+}
+.wrap{ max-width:var(--maxw); margin:0 auto; padding:0 28px; }
+section{ padding:90px 0; border-bottom:1px solid var(--linha-suave); }
+section:last-of-type{ border-bottom:none; }
+.kicker{ font-family:var(--mono); font-size:12px; letter-spacing:3.5px; text-transform:uppercase; color:var(--ouro); display:flex; align-items:center; gap:14px; margin-bottom:20px; }
+.kicker::before{ content:""; width:34px; height:1px; background:var(--ouro); }
+h2.sec-title{ font-family:var(--serif); font-weight:400; font-size:clamp(28px,4.2vw,48px); line-height:1.07; color:var(--creme); letter-spacing:-0.5px; margin-bottom:16px; }
+.sec-intro{ max-width:680px; color:var(--areia); font-size:16.5px; line-height:1.75; margin-bottom:46px; }
+.sec-intro strong{ color:var(--creme); font-weight:500; }
+
+/* CAPA */
+.cover{ min-height:86vh; display:flex; flex-direction:column; justify-content:center; position:relative; overflow:hidden; border-bottom:1px solid var(--linha); padding:88px 0 64px; }
+.cover .arc{ position:absolute; right:-240px; top:50%; transform:translateY(-50%); width:700px; height:700px; border-radius:50%; border:1.5px solid var(--linha); box-shadow:inset 0 0 110px rgba(201,162,75,0.10); pointer-events:none; }
+.cover .arc::after{ content:""; position:absolute; inset:84px; border-radius:50%; border:1px solid rgba(201,162,75,0.12); }
+.cover .glow{ position:absolute; right:-60px; top:50%; transform:translateY(-50%); width:500px; height:500px; background:radial-gradient(circle, rgba(230,200,119,0.13), transparent 62%); pointer-events:none; }
+.cover-inner{ position:relative; z-index:2; }
+.cover .star{ color:var(--ouro); font-size:18px; letter-spacing:6px; display:block; margin-bottom:26px; }
+.cover .pre{ font-family:var(--mono); font-size:13px; letter-spacing:5px; text-transform:uppercase; color:var(--areia); margin-bottom:24px; }
+.cover h1{ font-family:var(--serif); font-weight:400; font-size:clamp(40px,7.5vw,94px); line-height:0.98; letter-spacing:-1px; color:var(--creme); margin-bottom:22px; }
+.cover h1 .gold{ background:linear-gradient(96deg,var(--ouro-claro),var(--ouro) 55%,var(--brasa)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+.cover .sub{ font-family:var(--quote); font-style:italic; font-size:clamp(20px,3vw,30px); color:var(--ouro-claro); margin-bottom:26px; }
+.cover .tagline{ max-width:580px; font-size:17px; color:var(--areia); }
+.cover .tagline b{ color:var(--creme); font-weight:500; }
+.cover .meta{ margin-top:48px; display:flex; flex-wrap:wrap; gap:26px 50px; font-family:var(--mono); font-size:11.5px; letter-spacing:2px; text-transform:uppercase; color:var(--areia); }
+.cover .meta b{ color:var(--ouro); font-weight:500; }
+
+/* REGRAS DO JOGO */
+.rules{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.rule{ background:linear-gradient(180deg,var(--grafite-2),var(--grafite)); border:1px solid var(--linha-suave); border-radius:14px; padding:26px 24px; position:relative; overflow:hidden; }
+.rule::before{ content:""; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--ouro),transparent); }
+.rule .ix{ font-family:var(--mono); font-size:12px; color:var(--ouro); letter-spacing:2px; margin-bottom:12px; }
+.rule h4{ font-family:var(--serif); font-weight:400; font-size:20px; color:var(--creme); margin-bottom:8px; }
+.rule p{ font-size:14px; color:var(--areia); line-height:1.6; }
+.rule p b{ color:var(--ouro-claro); font-weight:500; }
+
+/* PRINCIPIO (split) */
+.split{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.big-num{ background:linear-gradient(180deg,var(--grafite-2),var(--grafite)); border:1px solid var(--linha); border-radius:16px; padding:36px 34px; }
+.big-num .bn{ font-family:var(--serif); font-size:54px; color:var(--ouro); line-height:1; margin-bottom:10px; }
+.big-num .bl{ font-size:15px; color:var(--areia); line-height:1.6; }
+.big-num .bl b{ color:var(--creme); font-weight:500; }
+.voice-note{ background:var(--grafite); border:1px solid var(--linha-suave); border-radius:16px; padding:36px 34px; }
+.voice-note h4{ font-family:var(--mono); font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--ouro); margin-bottom:16px; }
+.voice-note p{ font-size:15px; color:var(--areia); line-height:1.65; margin-bottom:12px; }
+.voice-note p b{ color:var(--creme); font-weight:500; }
+.voice-note .vs{ display:flex; gap:12px; font-family:var(--mono); font-size:11px; letter-spacing:1px; text-transform:uppercase; margin-top:6px; }
+.voice-note .vs span{ border:1px solid var(--linha-suave); border-radius:30px; padding:6px 14px; color:var(--areia); }
+.voice-note .vs span.on{ border-color:var(--linha); color:var(--ouro); }
+
+/* PILARES */
+.pilares{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.pilar{ background:var(--grafite); border:1px solid var(--linha-suave); border-radius:14px; padding:28px 30px; }
+.pilar .p-ix{ font-family:var(--mono); font-size:12px; color:var(--ouro); letter-spacing:2px; margin-bottom:12px; }
+.pilar h4{ font-family:var(--serif); font-weight:400; font-size:22px; color:var(--creme); margin-bottom:8px; }
+.pilar .p-desc{ font-size:14.5px; color:var(--areia); line-height:1.6; margin-bottom:16px; }
+.pilar .p-ex{ font-size:14px; color:var(--creme); font-family:var(--quote); font-style:italic; border-left:2px solid var(--linha); padding:6px 0 6px 16px; line-height:1.5; }
+.pilar .p-ex .l{ display:block; font-family:var(--mono); font-style:normal; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--ouro); margin-bottom:6px; }
+
+/* MOTOR */
+.engine{ background:linear-gradient(180deg,rgba(201,162,75,0.08),var(--grafite)); border:1px solid var(--linha); border-radius:16px; padding:40px 42px; }
+.engine .eq{ font-family:var(--quote); font-style:italic; font-size:24px; color:var(--creme); line-height:1.45; margin-bottom:20px; }
+.engine .eq .hl{ color:var(--ouro-claro); font-style:normal; }
+.engine .steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:8px; }
+.engine .step .s-n{ font-family:var(--mono); font-size:12px; letter-spacing:1.5px; color:var(--ouro); margin-bottom:8px; }
+.engine .step p{ font-size:14px; color:var(--areia); line-height:1.6; }
+.engine .step p b{ color:var(--creme); font-weight:500; }
+
+/* CADENCIA + LINHAS */
+.two{ display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+.card-soft{ border-radius:14px; padding:30px 32px; border:1px solid var(--linha-suave); background:var(--grafite); }
+.card-soft h4{ font-family:var(--mono); font-size:13px; letter-spacing:2px; text-transform:uppercase; margin-bottom:20px; }
+.card-soft.pace h4{ color:var(--ouro); }
+.card-soft.red h4{ color:var(--brasa); }
+.card-soft ul{ list-style:none; }
+.card-soft li{ font-size:14.5px; line-height:1.5; padding:11px 0 11px 26px; border-bottom:1px solid var(--linha-suave); color:var(--creme); position:relative; }
+.card-soft li:last-child{ border-bottom:none; }
+.card-soft.pace li::before{ content:"\2192"; position:absolute; left:0; color:var(--ouro); }
+.card-soft.red li::before{ content:"\2715"; position:absolute; left:0; color:var(--brasa); font-weight:700; }
+.card-soft li span{ display:block; font-size:12.5px; color:var(--areia); margin-top:3px; }
+
+/* SINAL */
+.signal{ text-align:center; max-width:720px; margin:0 auto; }
+.signal .sq{ font-family:var(--serif); font-size:clamp(24px,3.6vw,38px); color:var(--creme); line-height:1.2; margin-bottom:20px; }
+.signal .sq .gold{ color:var(--ouro); }
+.signal p{ font-size:15.5px; color:var(--areia); line-height:1.7; }
+.signal p b{ color:var(--creme); font-weight:500; }
+
+footer{ text-align:center; padding:62px 28px 86px; color:var(--areia); }
+footer .star{ color:var(--ouro); letter-spacing:6px; font-size:14px; display:block; margin-bottom:16px; }
+footer .fname{ font-family:var(--serif); font-size:24px; color:var(--creme); margin-bottom:6px; }
+footer .ftag{ font-family:var(--mono); font-size:11px; letter-spacing:3px; text-transform:uppercase; }
+footer .fmeta{ font-size:13px; margin-top:20px; line-height:1.7; }
+
+@media (max-width:880px){
+  .rules{ grid-template-columns:1fr; }
+  .split{ grid-template-columns:1fr; }
+  .pilares{ grid-template-columns:1fr; }
+  .engine .steps{ grid-template-columns:1fr; }
+  .two{ grid-template-columns:1fr; }
+  .cover .arc,.cover .glow{ opacity:.5; }
+}
+@media (max-width:540px){ section{ padding:66px 0; } .engine{ padding:30px 26px; } }
+</style>
+</head>
+<body>
+
+<!-- CAPA -->
+<header class="cover">
+  <div class="arc"></div>
+  <div class="glow"></div>
+  <div class="wrap cover-inner">
+    <span class="star">&#9733; &#9733; &#9733;</span>
+    <div class="pre">Linha Editorial &middot; Threads &middot; 2026</div>
+    <h1>Menos palco,<br><span class="gold">mais mesa.</span></h1>
+    <div class="sub">O Threads como canal de relacionamento.</div>
+    <p class="tagline">
+      Aqui o jogo não é audiência, é <b>relação</b>. Presença leve e constante, na roda de colegas,
+      prospects e clientes. E a regra de ouro do Threads joga a teu favor: resposta vale mais que post.
+    </p>
+    <div class="meta">
+      <span><b>Reply</b> antes de post</span>
+      <span><b>2 a 3</b> posts por semana</span>
+      <span><b>Relação</b>, não alcance</span>
+      <span><b>Zero</b> pitch</span>
+    </div>
+  </div>
+</header>
+
+<!-- 01 O JOGO -->
+<section id="jogo">
+  <div class="wrap">
+    <div class="kicker">01 &middot; O Jogo do Threads</div>
+    <h2 class="sec-title">A plataforma foi feita<br>pra quem conversa.</h2>
+    <p class="sec-intro">Diferente do LinkedIn, o Threads em 2026 premia <strong>troca em tempo real</strong>, não o post perfeito. O que sobe é quem está na conversa agora. Por sorte, é exatamente o que um canal de relacionamento precisa.</p>
+
+    <div class="rules">
+      <div class="rule">
+        <div class="ix">R01</div>
+        <h4>Resposta &gt; like</h4>
+        <p>Um post com <b>15 respostas de verdade</b> bate um com 100 likes e zero conversa. O algoritmo pesa o diálogo, não o aplauso.</p>
+      </div>
+      <div class="rule">
+        <div class="ix">R02</div>
+        <h4>Conversa vence promoção</h4>
+        <p>Pergunta e debate performam. <b>Anúncio disfarçado morre.</b> Quem entra pra vender é ignorado; quem entra pra trocar é amplificado.</p>
+      </div>
+      <div class="rule">
+        <div class="ix">R03</div>
+        <h4>Os primeiros 30 a 90 min</h4>
+        <p>Decidem o alcance do post, e de novo, o que conta é <b>resposta</b>. Postou, ficou por perto pra puxar a conversa que começa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 O PRINCIPIO -->
+<section id="principio">
+  <div class="wrap">
+    <div class="kicker">02 &middot; O Princípio</div>
+    <h2 class="sec-title">Reply-first.<br>O post é o bônus.</h2>
+    <p class="sec-intro">No LinkedIn o post é o produto. No Threads, o produto é a <strong>conversa</strong>. Vira a lógica de cabeça pra baixo e tudo fica leve.</p>
+
+    <div class="split">
+      <div class="big-num">
+        <div class="bn">80/20</div>
+        <div class="bl"><b>80% do teu valor está nas conversas dos outros</b>, respondendo colega, prospect e cliente com substância. Só 20% nos teus próprios posts. Responder bem custa 10 minutos e rende relação de verdade.</div>
+      </div>
+      <div class="voice-note">
+        <h4>A voz afrouxa</h4>
+        <p>Mesma DNA de sempre (cena, campo, verdade), mas o registro solta. Threads pede o <b>Fabricio de mesa de bar</b>, não de palco: take rápido, cena curta, humor, o bah e o guri à vontade.</p>
+        <p>Post curto, sem polimento de LinkedIn. E a fé, se aparecer, segue só no detalhe, nunca em slogan.</p>
+        <div class="vs"><span>LinkedIn: palco</span><span class="on">Threads: mesa</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 PILARES -->
+<section id="pilares">
+  <div class="wrap">
+    <div class="kicker">03 &middot; Os Pilares</div>
+    <h2 class="sec-title">Quatro assuntos<br>que giram sem esforço.</h2>
+    <p class="sec-intro">Leves de produzir, feitos pra puxar resposta. Nenhum deles pede uma tarde de trabalho: são pensamentos que tu já tem, ditos em voz alta.</p>
+
+    <div class="pilares">
+      <div class="pilar">
+        <div class="p-ix">P01</div>
+        <h4>Bastidor rápido</h4>
+        <p class="p-desc">Um pedaço do teu dia real de operação. Humaniza e convida o "eu também" de quem vive o mesmo.</p>
+        <div class="p-ex"><span class="l">Soa assim</span>"Gerenciador aberto, chimarrão do lado, e uma campanha teimando em não sair do learning. Sexta dos justos."</div>
+      </div>
+      <div class="pilar">
+        <div class="p-ix">P02</div>
+        <h4>Take de mercado</h4>
+        <p class="p-desc">Uma opinião curta e com lastro sobre tráfego ou marketing. Convida debate, e debate com colega vira relação.</p>
+        <div class="p-ex"><span class="l">Soa assim</span>"Criativo não tá caro. Tua oferta que não para em pé. O tráfego só acelera o que já existe."</div>
+      </div>
+      <div class="pilar">
+        <div class="p-ix">P03</div>
+        <h4>Pergunta genuína</h4>
+        <p class="p-desc">Perguntar algo real pra roda. Combustível puro de conversa, e ainda te ensina o que o mercado pensa.</p>
+        <div class="p-ex"><span class="l">Soa assim</span>"Gestor de tráfego: tu valida ROAS contra o quê? Caixa, holdout, ou fé no gerenciador? Curiosidade real."</div>
+      </div>
+      <div class="pilar">
+        <div class="p-ix">P04</div>
+        <h4>Generosidade</h4>
+        <p class="p-desc">Comentar, repostar e elogiar o take bom de um colega. Relação se constrói dando primeiro, e o algoritmo ama isso.</p>
+        <div class="p-ex"><span class="l">Soa assim</span>"Esse ponto do fulano sobre atribuição é dos melhores que li essa semana. Fica de olho nele."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 O MOTOR -->
+<section id="motor">
+  <div class="wrap">
+    <div class="kicker">04 &middot; O Motor</div>
+    <h2 class="sec-title">A lista dos 15.</h2>
+    <p class="sec-intro">Aqui mora 80% do resultado. Não é sobre teus posts, é sobre onde tu aparece.</p>
+
+    <div class="engine">
+      <p class="eq">"Relação não se constrói postando pra multidão. Se constrói <span class="hl">aparecendo na conversa de quem importa.</span>"</p>
+      <div class="steps">
+        <div class="step">
+          <div class="s-n">01 &middot; Monta a lista</div>
+          <p><b>15 a 20 pessoas</b> que importam: colegas que tu respeita, prospects no teu radar, clientes atuais. Segue e ativa notificação.</p>
+        </div>
+        <div class="step">
+          <div class="s-n">02 &middot; Responde com peso</div>
+          <p>Nada de "top!". Responde com <b>opinião, dado ou uma pergunta de volta</b>. A resposta que soma é a que a pessoa lembra.</p>
+        </div>
+        <div class="step">
+          <div class="s-n">03 &middot; Deixa esfriar pra DM</div>
+          <p>Quando a troca pública engrenar, <b>puxa pro privado</b> sem agenda. É ali que colega vira parceria e prospect vira conversa.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 CADENCIA + LINHAS VERMELHAS -->
+<section id="cadencia">
+  <div class="wrap">
+    <div class="kicker">05 &middot; Cadência &amp; Linhas Vermelhas</div>
+    <h2 class="sec-title">Leve de manter.<br>Firme no que recusa.</h2>
+    <p class="sec-intro">A presença é leve de propósito. E é a disciplina do que não se faz que protege a relação.</p>
+
+    <div class="two">
+      <div class="card-soft pace">
+        <h4>A cadência leve</h4>
+        <ul>
+          <li>2 a 3 posts curtos por semana<span>Sem grind. Pensamento que tu já teve, dito rápido.</span></li>
+          <li>10 a 15 min respondendo, poucas vezes na semana<span>Este é o jogo. O post é só o convite.</span></li>
+          <li>Ficar por perto nos primeiros 30 a 90 min<span>Puxar a conversa que o post começa.</span></li>
+          <li>Consistência acima de volume<span>Aparecer sempre um pouco vence sumir e voltar.</span></li>
+        </ul>
+      </div>
+      <div class="card-soft red">
+        <h4>Nunca, no Threads</h4>
+        <ul>
+          <li>Vender ou fazer pitch<span>É relacionamento, não pipeline. Pitch envenena a relação com prospect e cliente.</span></li>
+          <li>Travessão em qualquer texto<span>Regra da casa. Vírgula, ponto, parênteses no lugar.</span></li>
+          <li>Fé como slogan<span>Aparece no detalhe e no jeito, nunca como bandeira.</span></li>
+          <li>Responder no automático<span>"Top!" não constrói nada. Se não tem o que dizer, não responde.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 O SINAL -->
+<section id="sinal">
+  <div class="wrap">
+    <div class="signal">
+      <div class="kicker" style="justify-content:center;">06 &middot; O Sinal de Sucesso</div>
+      <p class="sq">Aqui não se mede seguidor.<br>Mede-se <span class="gold">conversa que virou relação.</span></p>
+      <p>Esquece alcance e curtida, são vaidade neste canal. A pergunta honesta da semana é uma só: <b>tive uma troca de verdade com um colega, um prospect ou um cliente?</b> Se a resposta for sim, o Threads cumpriu o papel. Relação aquecida, DM aberta e parceria que nasce de uma conversa pública valem mais que qualquer número no painel.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="star">&#9733; &#9733; &#9733;</span>
+  <div class="fname">Fabricio Kaempf</div>
+  <div class="ftag">MENOS PALCO, MAIS MESA</div>
+  <div class="fmeta">
+    Linha Editorial Threads &middot; Canal de Relacionamento &middot; 2026<br>
+    Santo Cristo, RS &middot; Itajaí, SC &middot; @fabriciokaempf
+  </div>
+</footer>
+
+</body>
+</html>
