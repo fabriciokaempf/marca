@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Série Palavra e Mercado | Fabricio Kaempf</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Gloock&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap');
+:root{--onyx:#0E0F12;--grafite:#15171C;--grafite-2:#1B1E25;--ouro:#C9A24B;--ouro-claro:#E6C877;--brasa:#C2643C;--creme:#F2E9D6;--areia:#9A9082;--linha:rgba(201,162,75,0.22);--linha-suave:rgba(242,233,214,0.10);--sans:'Inter',sans-serif;--serif:'Gloock',Georgia,serif;--mono:'JetBrains Mono',monospace;--quote:'Cormorant Garamond',Georgia,serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1000px 600px at 82% -8%,rgba(201,162,75,0.10),transparent 60%),var(--onyx);color:var(--creme);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:0 26px}
+header{padding:90px 0 56px;border-bottom:1px solid var(--linha);position:relative;overflow:hidden}
+header .arc{position:absolute;right:-220px;top:-140px;width:560px;height:560px;border-radius:50%;border:1.5px solid var(--linha);box-shadow:inset 0 0 100px rgba(201,162,75,0.10);pointer-events:none}
+.star{color:var(--ouro);font-size:16px;letter-spacing:6px;display:block;margin-bottom:20px}
+.pre{font-family:var(--mono);font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--areia);margin-bottom:18px}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(36px,6.5vw,68px);line-height:1;letter-spacing:-1px;margin-bottom:16px}
+h1 .gold{background:linear-gradient(96deg,var(--ouro-claro),var(--ouro) 55%,var(--brasa));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sub{font-family:var(--quote);font-style:italic;font-size:clamp(18px,2.6vw,24px);color:var(--ouro-claro);margin-bottom:18px}
+.tagline{max-width:560px;color:var(--areia);font-size:16px}
+.tagline b{color:var(--creme);font-weight:500}
+section{padding:66px 0;border-bottom:1px solid var(--linha-suave)}
+section:last-of-type{border-bottom:none}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--ouro);display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.kicker::before{content:"";width:30px;height:1px;background:var(--ouro)}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(26px,4vw,42px);line-height:1.1;margin-bottom:14px}
+.intro{max-width:640px;color:var(--areia);font-size:16px;margin-bottom:34px}
+.intro b{color:var(--creme);font-weight:500}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{background:linear-gradient(180deg,var(--grafite-2),var(--grafite));border:1px solid var(--linha-suave);border-radius:14px;padding:24px;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--ouro),transparent)}
+.card .tag{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--ouro);margin-bottom:10px}
+.card h3{font-family:var(--serif);font-weight:400;font-size:19px;margin-bottom:8px}
+.card p{font-size:13.5px;color:var(--areia);line-height:1.6}
+.card p b{color:var(--creme);font-weight:500}
+.script{border:1px solid var(--linha);border-radius:14px;background:var(--grafite);padding:28px 30px;margin-bottom:18px}
+.script h3{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ouro);margin-bottom:18px}
+.beat{display:grid;grid-template-columns:90px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--linha-suave)}
+.beat:last-child{border-bottom:none}
+.beat .t{font-family:var(--mono);font-size:12px;color:var(--ouro);padding-top:3px}
+.beat .fala{font-family:var(--quote);font-style:italic;font-size:18px;color:var(--creme);line-height:1.45}
+.beat .tela{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--areia);margin-top:6px}
+.notes{list-style:none}
+.notes li{font-size:14px;color:var(--areia);padding:8px 0 8px 22px;position:relative;border-bottom:1px solid var(--linha-suave)}
+.notes li::before{content:"\2192";position:absolute;left:0;color:var(--ouro)}
+.notes li b{color:var(--creme);font-weight:500}
+.slides{display:flex;flex-direction:column;gap:10px}
+.slide{display:grid;grid-template-columns:52px 1fr;gap:16px;background:var(--grafite);border:1px solid var(--linha-suave);border-radius:12px;padding:16px 20px;align-items:start}
+.slide .n{font-family:var(--serif);font-size:22px;color:var(--ouro)}
+.slide p{font-size:14.5px;color:var(--creme);line-height:1.55}
+.slide p span{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--areia);margin-bottom:4px}
+.legenda{background:linear-gradient(180deg,rgba(201,162,75,0.07),var(--grafite));border:1px solid var(--linha);border-radius:14px;padding:30px 32px;margin-top:22px}
+.legenda h3{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ouro);margin-bottom:16px}
+.legenda p{font-size:15px;color:var(--creme);margin-bottom:14px;line-height:1.6}
+.legenda p.verso{font-family:var(--quote);font-style:italic;color:var(--ouro-claro);font-size:17px}
+.legenda p.alerta{font-size:13px;color:var(--brasa);border-top:1px solid var(--linha-suave);padding-top:14px;margin:0}
+.backlog{display:flex;flex-wrap:wrap;gap:10px}
+.backlog span{font-family:var(--mono);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;border:1px solid var(--linha-suave);border-radius:30px;padding:8px 16px;color:var(--areia)}
+.backlog span.done{border-color:var(--linha);color:var(--ouro)}
+.backlog span.next{background:var(--ouro);color:var(--onyx);border-color:var(--ouro);font-weight:500}
+footer{text-align:center;padding:56px 26px 76px;color:var(--areia)}
+footer .fname{font-family:var(--serif);font-size:22px;color:var(--creme);margin:14px 0 4px}
+footer .ftag{font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.beat{grid-template-columns:1fr;gap:4px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="arc"></div>
+  <div class="wrap">
+    <span class="star">&#9733; &#9733; &#9733;</span>
+    <div class="pre">Linha Editorial &middot; Instagram &middot; @fabriciokaempf</div>
+    <h1>Palavra<br><span class="gold">e mercado.</span></h1>
+    <div class="sub">O que cada livro da Bíblia ensina sobre liderar, decidir e escalar.</div>
+    <p class="tagline">A série do perfil profissional que cruza um livro bíblico com uma verdade de mercado. <b>Parada em outubro de 2025, retomada em outubro de 2026</b>, com o próximo livro já roteirizado.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">01 &middot; A Série</div>
+    <h2>Um livro por post,<br>na ordem em que a Bíblia conta.</h2>
+    <p class="intro">Livros históricos, em ordem canônica. <b>A Palavra é o assunto, o mercado é a aplicação</b>, nunca o contrário. O último publicado foi 2 Samuel, em 22 de outubro de 2025.</p>
+    <div class="backlog">
+      <span class="done">Josué</span><span class="done">Juízes</span><span class="done">1 Samuel</span><span class="done">2 Samuel</span><span class="next">1 Reis &larr; próximo</span><span>2 Reis</span><span>1 Crônicas</span><span>2 Crônicas</span><span>Esdras</span><span>Neemias</span><span>Ester</span>
+    </div>
+    <div class="grid" style="margin-top:28px">
+      <div class="card"><div class="tag">Capa</div><h3>Linha de abertura + título</h3><p>"Entre a queda e a presença: <b>O que 2 Samuel ensina sobre LIDERANÇA E PROPÓSITO</b>". Fundo escuro cinematográfico, serifa dourada, header com nome e @, rodapé ESTRATÉGIA &amp; PROPÓSITO.</p></div>
+      <div class="card"><div class="tag">Formato novo</div><h3>Vídeo no card 1</h3><p>A partir de 1 Reis, o carrossel abre com <b>vídeo curto do Fabricio</b> apresentando o tema, e os cards seguintes trazem o conteúdo. O vídeo é o gancho humano; a capa cinematográfica vira o card 2.</p></div>
+      <div class="card"><div class="tag">Legenda</div><h3>Devocional, depois mercado</h3><p>Leitura honesta da passagem, aplicação com lastro real, uma cena vivida, e <b>fecha sempre com o versículo citado</b> (assinatura da série).</p></div>
+      <div class="card"><div class="tag">O que evoluiu</div><h3>Sem púlpito, sem travessão</h3><p>As legendas de 2025 empilhavam frase de efeito e usavam travessão. Hoje: <b>zero travessão, aforismo em dose mínima, cena real no lugar do sermão.</b> A densidade espiritual fica, o palanque sai.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">02 &middot; Vídeo de Retorno</div>
+    <h2>Assumir o hiato,<br>abrir 1 Reis.</h2>
+    <p class="intro">Dois trabalhos num vídeo só: contar que a série voltou e puxar pro carrossel. Tom de conversa, não de anúncio. <b>Primeiros 3 segundos sem logo, sem vinheta, sem "oi pessoal".</b></p>
+
+    <div class="script">
+      <h3>Versão 20 segundos (card 1 do carrossel)</h3>
+      <div class="beat"><div class="t">0s a 3s</div><div><div class="fala">"Parei essa série faz quase um ano."</div><div class="tela">tela: quase um ano parado</div></div></div>
+      <div class="beat"><div class="t">3s a 9s</div><div><div class="fala">"Não por falta de livro. Por excesso de vida. Voltei de onde parei."</div></div></div>
+      <div class="beat"><div class="t">9s a 17s</div><div><div class="fala">"O próximo é 1 Reis. O livro em que o reino mais rico da história racha no meio. Não por falta de dinheiro. Por causa de quem o rei escolheu ouvir."</div><div class="tela">tela: 1 Reis</div></div></div>
+      <div class="beat"><div class="t">17s a 20s</div><div><div class="fala">"Arrasta pro lado."</div><div class="tela">tela: arrasta pro lado</div></div></div>
+    </div>
+
+    <div class="script">
+      <h3>Versão 40 segundos (Reels ou Stories)</h3>
+      <div class="beat"><div class="t">0s a 3s</div><div><div class="fala">"Parei essa série faz quase um ano."</div><div class="tela">tela: quase um ano parado</div></div></div>
+      <div class="beat"><div class="t">3s a 10s</div><div><div class="fala">"Não foi por falta de livro. Foi por excesso de vida: cliente, mudança, temporada no interior. E eu percebi que a série que eu mais gostava de fazer era a que eu tinha largado."</div></div></div>
+      <div class="beat"><div class="t">10s a 18s</div><div><div class="fala">"Então tô voltando de onde parei. Tava em 2 Samuel, o auge de Davi. O próximo é 1 Reis. E 1 Reis é o livro que mais parece o mercado digital."</div><div class="tela">tela: 1 Reis</div></div></div>
+      <div class="beat"><div class="t">18s a 32s</div><div><div class="fala">"Abre com Salomão podendo pedir qualquer coisa a Deus. Ele pede discernimento. O reino mais rico da história vem como consequência. Uma geração depois, esse mesmo reino racha no meio. Não por falta de dinheiro. Por causa de quem o rei escolheu ouvir."</div></div></div>
+      <div class="beat"><div class="t">32s a 40s</div><div><div class="fala">"Se tu já viu negócio quebrar no auge, tu vai se reconhecer. Arrasta pro lado."</div><div class="tela">tela: arrasta pro lado</div></div></div>
+    </div>
+
+    <ul class="notes">
+      <li><b>Cenário real.</b> Mate na mão, luz de fim de tarde, o interior atrás. A capa da série é cinematográfica; o vídeo é o contraste humano que para o scroll.</li>
+      <li><b>Legenda embutida no vídeo.</b> A maioria assiste sem som. Frases curtas, uma por vez.</li>
+      <li><b>Só três textos na tela.</b> Menos é mais.</li>
+      <li><b>Grava duas vezes:</b> uma olhando o roteiro, uma sem olhar. A segunda costuma ser a boa.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">03 &middot; Post 1 Reis</div>
+    <h2>Entre o auge e a ruptura:<br>o que 1 Reis ensina sobre sabedoria e escala.</h2>
+    <p class="intro">Três passagens, uma tese. Salomão pede discernimento (cap. 3), Roboão ouve os amigos novos e perde o reino (cap. 12), Elias encontra Deus no sussurro e não no barulho (cap. 19). <b>Escalar não é problema de verba, é de discernimento.</b></p>
+
+    <div class="slides">
+      <div class="slide"><div class="n">1</div><p><span>vídeo</span>Roteiro de 20 segundos acima. Texto sobreposto no padrão da capa: "Entre o auge e a ruptura: O que 1 Reis ensina sobre SABEDORIA E ESCALA".</p></div>
+      <div class="slide"><div class="n">2</div><p><span>1 Reis 3</span>Deus oferece a Salomão o que ele quiser. Ele pede um coração que saiba discernir. A riqueza veio como consequência, não como pedido.</p></div>
+      <div class="slide"><div class="n">3</div><p><span>aplicação</span>No tráfego é igual. Quem pede escala antes de ter discernimento sobre a oferta escala o problema junto. Verba multiplica o que já existe, inclusive prejuízo.</p></div>
+      <div class="slide"><div class="n">4</div><p><span>1 Reis 12</span>Roboão herda o reino. Os anciãos aconselham servir o povo. Os amigos novos aconselham apertar. Ele ouve os novos. O reino racha em dois.</p></div>
+      <div class="slide"><div class="n">5</div><p><span>aplicação</span>Todo dia aparece um "amigo novo" no digital com o hack da semana. Quem tem cicatriz recomenda fundamento. É chato. E é o que segura.</p></div>
+      <div class="slide"><div class="n">6</div><p><span>1 Reis 19</span>Elias procura Deus no vento forte, no terremoto, no fogo. Deus não estava em nenhum deles. Estava num sussurro.</p></div>
+      <div class="slide"><div class="n">7</div><p><span>aplicação</span>O algoritmo grita: alcance, viral, número bonito. O que sustenta um negócio quase nunca faz barulho: retenção, margem, relação com cliente. Está no sussurro.</p></div>
+      <div class="slide"><div class="n">8</div><p><span>síntese</span>1 Reis começa com o reino mais próspero de Israel e termina com ele dividido. A distância entre os dois foi uma sequência de decisões sobre a quem ouvir.</p></div>
+      <div class="slide"><div class="n">9</div><p><span>fecho</span>Escalar não é problema de verba. É problema de discernimento. Assinatura e @fabriciokaempf.</p></div>
+    </div>
+
+    <div class="legenda">
+      <h3>Legenda</h3>
+      <p>Parei essa série faz quase um ano. Não por falta de livro, por excesso de vida. Voltei.</p>
+      <p>1 Reis abre com Salomão recebendo de Deus a oferta que todo mundo sonha: pede o que quiser. Ele não pede riqueza nem vida longa. Pede um coração que saiba discernir. A riqueza veio depois, como consequência de um pedido certo.</p>
+      <p>O mesmo livro termina com o reino partido em dois. Roboão, neto de Davi, ouviu os amigos da idade dele em vez dos anciãos que serviram ao pai. Não faltou recurso. Faltou saber a quem ouvir.</p>
+      <p>[CENA REAL: um cliente pedindo pra escalar algo que ainda não tinha fundamento. Trocar pelo caso verdadeiro antes de publicar.]</p>
+      <p>Discernimento antes de escala. Deus antes de estratégia. O resto é consequência, ou não vem.</p>
+      <p class="verso">📖 "Dá, pois, ao teu servo um coração compreensivo para julgar o teu povo, para que prudentemente discirna entre o bem e o mal." (1 Reis 3:9)</p>
+      <p class="alerta">Regra da série: a cena de mercado precisa ser real. Verdade editada, nunca ficção.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="star">&#9733; &#9733; &#9733;</span>
+  <div class="fname">Fabricio Kaempf</div>
+  <div class="ftag">ESTRATÉGIA &amp; PROPÓSITO</div>
+</footer>
+</body>
+</html>
