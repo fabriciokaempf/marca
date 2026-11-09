@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Portfólio | Fabricio Kaempf</title>
+<meta name="description" content="Portfólio de performance de Fabricio Kaempf: tráfego, estratégia e leitura honesta de número. Cases no mercado cristão, no Brasil e no exterior." />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Gloock&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Cormorant+Garamond:ital@1&display=swap');
+
+:root{
+  --onyx:#0E0F12; --grafite:#15171C; --grafite-2:#1B1E25;
+  --ouro:#C9A24B; --ouro-claro:#E6C877; --brasa:#C2643C;
+  --creme:#F2E9D6; --areia:#9A9082;
+  --linha:rgba(201,162,75,0.22); --linha-suave:rgba(242,233,214,0.10);
+  --sans:'Inter',-apple-system,'Segoe UI',sans-serif;
+  --serif:'Gloock',Georgia,serif;
+  --mono:'JetBrains Mono',Consolas,monospace;
+  --quote:'Cormorant Garamond',Georgia,serif;
+}
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+body{
+  background:
+    radial-gradient(1000px 600px at 82% -8%, rgba(201,162,75,0.10), transparent 60%),
+    radial-gradient(800px 520px at 4% 16%, rgba(194,100,60,0.06), transparent 55%),
+    var(--onyx);
+  color:var(--creme); font-family:var(--sans); line-height:1.65;
+  -webkit-font-smoothing:antialiased; min-height:100vh;
+}
+.wrap{ max-width:960px; margin:0 auto; padding:0 26px; }
+
+header{ padding:92px 0 56px; border-bottom:1px solid var(--linha); position:relative; overflow:hidden; }
+header .arc{ position:absolute; right:-220px; top:-140px; width:560px; height:560px; border-radius:50%; border:1.5px solid var(--linha); box-shadow:inset 0 0 100px rgba(201,162,75,0.10); pointer-events:none; }
+.star{ color:var(--ouro); font-size:16px; letter-spacing:6px; display:block; margin-bottom:22px; }
+.pre{ font-family:var(--mono); font-size:12px; letter-spacing:4px; text-transform:uppercase; color:var(--areia); margin-bottom:20px; }
+h1{ font-family:var(--serif); font-weight:400; font-size:clamp(38px,7vw,72px); line-height:1; letter-spacing:-1px; margin-bottom:18px; }
+h1 .gold{ background:linear-gradient(96deg,var(--ouro-claro),var(--ouro) 55%,var(--brasa)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+.sub{ font-family:var(--quote); font-style:italic; font-size:clamp(18px,2.6vw,25px); color:var(--ouro-claro); margin-bottom:20px; }
+.tagline{ max-width:620px; color:var(--areia); font-size:16px; }
+.tagline b{ color:var(--creme); font-weight:500; }
+
+.stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; padding:36px 0 0; }
+.stat{ background:linear-gradient(180deg,var(--grafite-2),var(--grafite)); border:1px solid var(--linha-suave); border-radius:14px; padding:20px 18px; position:relative; overflow:hidden; }
+.stat::before{ content:""; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--ouro),transparent); }
+.stat .n{ font-family:var(--serif); font-size:clamp(22px,3vw,30px); color:var(--ouro-claro); line-height:1.1; margin-bottom:6px; }
+.stat .l{ font-family:var(--mono); font-size:10.5px; letter-spacing:1.5px; text-transform:uppercase; color:var(--areia); line-height:1.5; }
+
+section{ padding:64px 0; border-bottom:1px solid var(--linha-suave); }
+section:last-of-type{ border-bottom:none; }
+.kicker{ font-family:var(--mono); font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--ouro); display:flex; align-items:center; gap:12px; margin-bottom:14px; }
+.kicker::before{ content:""; width:30px; height:1px; background:var(--ouro); }
+.lead{ color:var(--areia); font-size:15.5px; max-width:640px; margin-bottom:34px; }
+.lead b{ color:var(--creme); font-weight:500; }
+
+.cases{ display:flex; flex-direction:column; gap:18px; }
+.case{ background:var(--grafite); border:1px solid var(--linha-suave); border-radius:16px; padding:30px 32px; position:relative; overflow:hidden; }
+.case::before{ content:""; position:absolute; top:0; left:0; bottom:0; width:2px; background:linear-gradient(180deg,var(--ouro),transparent 80%); }
+.case .tag{ font-family:var(--mono); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--ouro); margin-bottom:12px; }
+.case h3{ font-family:var(--serif); font-weight:400; font-size:clamp(21px,3vw,26px); margin-bottom:12px; }
+.case p{ font-size:15px; color:var(--areia); max-width:720px; }
+.case p + p{ margin-top:10px; }
+.case p b{ color:var(--creme); font-weight:500; }
+.chips{ display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
+.chip{ font-family:var(--mono); font-size:12px; color:var(--ouro-claro); border:1px solid var(--linha); border-radius:999px; padding:7px 14px; white-space:nowrap; }
+
+.principios{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.pr{ background:linear-gradient(180deg,var(--grafite-2),var(--grafite)); border:1px solid var(--linha-suave); border-radius:14px; padding:24px; position:relative; overflow:hidden; }
+.pr::before{ content:""; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--ouro),transparent); }
+.pr .d-tag{ font-family:var(--mono); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--ouro); margin-bottom:10px; }
+.pr h3{ font-family:var(--serif); font-weight:400; font-size:19px; margin-bottom:8px; }
+.pr p{ font-size:13.5px; color:var(--areia); line-height:1.6; }
+.pr p b{ color:var(--creme); font-weight:500; }
+
+.nota{ font-family:var(--quote); font-style:italic; font-size:clamp(18px,2.4vw,23px); color:var(--ouro-claro); max-width:700px; line-height:1.55; }
+.nota-fonte{ margin-top:14px; font-size:13.5px; color:var(--areia); max-width:640px; }
+
+footer{ text-align:center; padding:56px 26px 76px; color:var(--areia); }
+footer .fname{ font-family:var(--serif); font-size:22px; color:var(--creme); margin:14px 0 4px; }
+footer .ftag{ font-family:var(--mono); font-size:11px; letter-spacing:3px; text-transform:uppercase; }
+footer .fmeta{ font-size:13.5px; margin-top:18px; line-height:2; }
+footer a{ color:var(--ouro-claro); text-decoration:none; border-bottom:1px solid var(--linha); }
+footer a:hover{ color:var(--ouro); }
+
+@media (max-width:760px){
+  header{ padding:66px 0 44px; }
+  .stats{ grid-template-columns:repeat(2,1fr); }
+  .principios{ grid-template-columns:1fr; }
+  .case{ padding:24px 20px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="arc"></div>
+  <div class="wrap">
+    <span class="star">&#9733; &#9733; &#9733;</span>
+    <div class="pre">Portf&oacute;lio &middot; Performance &amp; Estrat&eacute;gia</div>
+    <h1>Fabricio<br><span class="gold">Kaempf</span></h1>
+    <div class="sub">Tr&aacute;fego, estrat&eacute;gia e leitura honesta de n&uacute;mero.</div>
+    <p class="tagline">Mais de <b>R$ 25 milh&otilde;es em m&iacute;dia paga</b> geridos no Brasil e no exterior, em Google Ads, Meta Ads e no que mais o projeto pedir. Esta p&aacute;gina &eacute; um recorte do que d&aacute; pra provar.</p>
+    <div class="stats">
+      <div class="stat"><div class="n">R$ 25 mi+</div><div class="l">em m&iacute;dia paga gerida</div></div>
+      <div class="stat"><div class="n">ROAS 36</div><div class="l">no melhor lan&ccedil;amento</div></div>
+      <div class="stat"><div class="n">CPA R$ 85</div><div class="l">em evento crist&atilde;o presencial</div></div>
+      <div class="stat"><div class="n">A$ 25 mil</div><div class="l">teto mensal de conta no exterior</div></div>
+    </div>
+  </div>
+</header>
+
+<section id="cases">
+  <div class="wrap">
+    <div class="kicker">Os Cases</div>
+    <p class="lead">Cinco projetos, cinco formatos diferentes de operar: <b>evento presencial, lan&ccedil;amento, recorr&ecirc;ncia, conta internacional e escala de infoproduto</b>. O n&uacute;mero muda, a l&oacute;gica n&atilde;o: ler o funil inteiro antes de pedir mais verba.</p>
+    <div class="cases">
+
+      <article class="case">
+        <div class="tag">Evento crist&atilde;o presencial &middot; Meta Ads</div>
+        <h3>Confer&ecirc;ncia SHAMAR &middot; Ap&oacute;stola D&eacute;bora Guillen</h3>
+        <p>Evento presencial de intercess&atilde;o prof&eacute;tica, com ingressos vendidos por lote. Entrei na concep&ccedil;&atilde;o e sa&iacute; no comercial: estrat&eacute;gia de aquisi&ccedil;&atilde;o, campanhas por temperatura de p&uacute;blico, copies, rastreamento por UTM e a transi&ccedil;&atilde;o de lotes.</p>
+        <p>Quando o dado mostrou que s&oacute; <b>5,65% de quem via a p&aacute;gina chegava ao checkout</b>, a decis&atilde;o foi melhorar a convers&atilde;o antes de pedir mais verba. A campanha validou a tese.</p>
+        <div class="chips">
+          <span class="chip">R$ 2.473 investidos na campanha destaque</span>
+          <span class="chip">29 vendas</span>
+          <span class="chip">CPA R$ 85</span>
+          <span class="chip">85% das vendas do recorte</span>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="tag">Lan&ccedil;amento &middot; Nicho crist&atilde;o</div>
+        <h3>Semin&aacute;rio Minist&eacute;rio dos Anjos &middot; Ap&oacute;stolo Coraiola</h3>
+        <p>Lan&ccedil;amento de infoproduto no mercado crist&atilde;o, em janeiro de 2025. O time fechou com <b>ROAS 36: R$ 157 mil faturados com R$ 4,3 mil de tr&aacute;fego</b>. Cada um com sua habilidade, um suportando o outro; a m&iacute;dia e a leitura de n&uacute;mero eram comigo.</p>
+        <div class="chips">
+          <span class="chip">ROAS 36</span>
+          <span class="chip">R$ 157 mil faturados</span>
+          <span class="chip">R$ 4,3 mil de tr&aacute;fego</span>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="tag">Recorr&ecirc;ncia &middot; Assinatura de igreja</div>
+        <h3>Igreja Gloriosa &middot; diagn&oacute;stico de funil</h3>
+        <p>Produto de assinatura do mesmo ecossistema, e aqui o trabalho foi de bisturi. O funil aberto por temperatura mostrou o p&uacute;blico quente convertendo da p&aacute;gina pro checkout a <b>13,24%, contra 1,39% do p&uacute;blico frio</b>, e o gargalo de verdade morava na etapa de pagamento.</p>
+        <p>Dali sa&iacute;ram as prioridades: remarketing de abandono, CRO de checkout e CPA lido junto de LTV e churn, porque recorr&ecirc;ncia n&atilde;o se avalia por venda &uacute;nica.</p>
+        <div class="chips">
+          <span class="chip">Funil por temperatura</span>
+          <span class="chip">Quente 13,24% vs frio 1,39%</span>
+          <span class="chip">Tese: convers&atilde;o antes de verba</span>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="tag">Exterior &middot; Google Ads</div>
+        <h3>Cliente na Austr&aacute;lia &middot; conta em crescimento</h3>
+        <p>Exporta&ccedil;&atilde;o de servi&ccedil;os de marketing, com cobran&ccedil;a em d&oacute;lar australiano. Peguei a conta crescendo rumo a A$ 15 mil mensais de investimento e ela chegou a <b>A$ 20 mil por m&ecirc;s, com teto de A$ 25 mil na alta temporada</b>.</p>
+        <p>O aumento de verba veio depois de um diagn&oacute;stico frio que corrigiu o rumo: site refeito em layout, copy e formul&aacute;rio antes de qualquer escala. Verba s&oacute; cresce em cima de estrutura que converte.</p>
+        <div class="chips">
+          <span class="chip">De A$ 15 mil para A$ 25 mil/m&ecirc;s</span>
+          <span class="chip">Search + preparo de alta temporada</span>
+          <span class="chip">Cobran&ccedil;a internacional</span>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="tag">Infoproduto &middot; Escala</div>
+        <h3>Hotmart Black Moon &middot; R$ 5 milh&otilde;es</h3>
+        <p>Integrei o time de tr&aacute;fego que levou um especialista ao <b>Hotmart Black Moon, com R$ 5 milh&otilde;es em faturamento</b>, entre lan&ccedil;amentos e perp&eacute;tuos. Resultado coletivo, constru&iacute;do sobre estrutura de campanha e decis&atilde;o orientada por dado.</p>
+        <div class="chips">
+          <span class="chip">Hotmart Black Moon</span>
+          <span class="chip">R$ 5 milh&otilde;es faturados</span>
+          <span class="chip">Lan&ccedil;amentos e perp&eacute;tuos</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="principios">
+  <div class="wrap">
+    <div class="kicker">Como Eu Leio N&uacute;mero</div>
+    <div class="principios">
+      <div class="pr">
+        <div class="d-tag">Tradu&ccedil;&atilde;o</div>
+        <h3>Sem tecniqu&ecirc;s</h3>
+        <p><b>ROAS &eacute; quanto cada real investido te devolve.</b> Simples assim. O dono do neg&oacute;cio decide melhor quando entende o n&uacute;mero, e traduzir faz parte do meu trabalho.</p>
+      </div>
+      <div class="pr">
+        <div class="d-tag">Ordem das coisas</div>
+        <h3>Convers&atilde;o antes de verba</h3>
+        <p>Escalar funil furado s&oacute; espalha o furo. Primeiro o diagn&oacute;stico etapa por etapa, depois o or&ccedil;amento. <b>O dado aponta onde d&oacute;i antes de a verba decidir.</b></p>
+      </div>
+      <div class="pr">
+        <div class="d-tag">Teste</div>
+        <h3>Hip&oacute;tese ao lado, n&atilde;o no lugar</h3>
+        <p>O que funciona n&atilde;o se desliga pra dar espa&ccedil;o ao que ainda n&atilde;o provou. <b>Teste roda em paralelo</b>, com verba separada e crit&eacute;rio de qualidade antes de receber tr&aacute;fego.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="nota">
+  <div class="wrap">
+    <div class="kicker">Palavra Final</div>
+    <p class="nota">&ldquo;Todo n&uacute;mero desta p&aacute;gina &eacute; recorte real de projeto que eu operei, com fonte em relat&oacute;rio. Resultado &eacute; de time: cada um com sua habilidade, um suportando o outro.&rdquo;</p>
+    <p class="nota-fonte">O que pede sigilo (contratos, valores de clientes, nomes sob reserva) fica fora daqui. Se quiser conversar sobre algum case em detalhe, &eacute; s&oacute; chamar.</p>
+  </div>
+</section>
+
+<footer>
+  <span class="star">&#9733; &#9733; &#9733;</span>
+  <div class="fname">Fabricio Kaempf</div>
+  <div class="ftag">Estrategista Digital</div>
+  <div class="fmeta">
+    <a href="https://www.linkedin.com/in/fabriciokaempf/" target="_blank" rel="noopener">linkedin.com/in/fabriciokaempf</a><br>
+    <a href="https://www.instagram.com/fabriciokaempf/" target="_blank" rel="noopener">@fabriciokaempf</a><br>
+    nascimentofabriciok@gmail.com
+  </div>
+</footer>
+
+</body>
+</html>
